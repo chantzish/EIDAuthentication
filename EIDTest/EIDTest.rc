@@ -1,0 +1,295 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutre (Par défaut) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEUD)
+LANGUAGE LANG_NEUTRAL, SUBLANG_DEFAULT
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_EIDCARDLIBRARYTEST  ICON                    "EIDTest.ico"
+IDI_SMALL               ICON                    "small.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_EIDCARDLIBRARYTEST MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Quit",                       IDM_EXIT
+    END
+    POPUP "Eid&AuthentificationPackage"
+    BEGIN
+        MENUITEM "Test registration",           IDM_AP_REGISTRATION
+        MENUITEM "Test Packageloaded",          IDM_AP_LOAD
+        MENUITEM "Test ProtectData",            IDM_AP_PROTECT
+        MENUITEM "&UserNameToToken",            IDM_AP_TOKEN
+        MENUITEM "UserNameTo&Profile",          IDM_AP_PROFILE
+        MENUITEM "Policies",                    IDM_AP_GPO
+        MENUITEM "Test Exception Handling",     IDM_AP_EXCEPTION
+    END
+    POPUP "Eid&CredentialProvider"
+    BEGIN
+        POPUP "Remove Policy"
+        BEGIN
+            MENUITEM "Trace",                       IDM_CRED_RP_TRACE
+            MENUITEM "Trigger",                     IDM_CRED_RP_TRIGGER
+        END
+        POPUP "&SmartCardWaitThread"
+        BEGIN
+            MENUITEM "&Start",                      IDM_STARTWAITTHREAD
+            MENUITEM "&Stop",                       IDM_STOPWAITTHREAD
+        END
+        POPUP "WinBioWaitThread"
+        BEGIN
+            MENUITEM "&Start",                      IDM_WINBIOSTARTWAITTHREAD
+            MENUITEM "&Stop",                       IDM_WINBIOSTOPWAITTHREAD
+        END
+        MENUITEM "Credential&List",             IDM_CRED_LIST
+        MENUITEM "Retrieve Certificate context from CSP Info", IDM_CRED_CSPINFO
+        MENUITEM "Certificate &Validation",     IDM_CRED_CERT
+        MENUITEM "UserTile",                    IDM_CRED_TILE
+        MENUITEM "Test COM Object",             IDM_CRED_COM
+        MENUITEM "Test Password Reset Wizard",  IDM_CRED_RESETPASS
+    END
+    POPUP "SSP"
+    BEGIN
+        MENUITEM "AcquireHandle",               IDM_SSP_ACQUIRE
+        MENUITEM "Login",                       IDM_SSP_LOGIN
+    END
+    POPUP "EID&PasswordChangeNotification"
+    BEGIN
+        MENUITEM "Create Stored Credential with crypt", IDM_PASS_CREATE
+        MENUITEM "Create Stored Credential with no crypt", IDM_PASS_CREATE2
+        MENUITEM "Update Credential",           IDM_PASS_UPDATE
+        MENUITEM "Delete Credential",           IDM_PASS_DELETE
+        MENUITEM "Retrieve Credential",         IDM_PASS_RETRIEVE
+    END
+    POPUP "Registration"
+    BEGIN
+        MENUITEM "Authentication Package Register", IDM_REG_AP
+        MENUITEM "Authentication Package UnRegister", IDM_UNREG_AP
+        MENUITEM "Credential Provider Register", IDM_REG_CP
+        MENUITEM "Credential Provider UnRegister", IDM_UNREG_CP
+        MENUITEM "Password Filter Register",    IDM_REG_PF
+        MENUITEM "Password Filter UnRegister",  IDM_UNREG_PF
+        MENUITEM "Wizard Register",             IDM_REG_WIZ
+        MENUITEM "Wizard UnRegister",           IDM_UNREG_WIZ
+    END
+    POPUP "Online Database"
+    BEGIN
+        MENUITEM "Test OK",                     40001
+    END
+    POPUP "Logon Scenarios"
+    BEGIN
+        MENUITEM "Lsa Authentication",          IDM_CRED_LSA
+        MENUITEM "SSPI Authentication",         IDM_CRED_SSPI
+        MENUITEM "Negotiate",                   IDM_CRED_NEGOTIATE
+        MENUITEM "Ntlm",                        IDM_CRED_NTLM
+        MENUITEM "CredSSP",                     IDM_CRED_CredSSP
+        MENUITEM SEPARATOR
+        MENUITEM "&CredUIPromptForWindowsCredentials", IDM_CRED_UI
+        MENUITEM "CredUI Admin",                IDM_CRED_UI_ADMIN
+        MENUITEM "CredUI Only EID",             IDM_CRED_ONLYEID
+        MENUITEM "CredUIPromptForCredentials ", IDM_CRED_OLD
+        MENUITEM SEPARATOR
+        MENUITEM "Add delegation info for credssp", IDM_CREDSSP_REG_ADD
+        MENUITEM "Delete delegation info for credssp", IDM_CREDSSP_REG_DEL
+        MENUITEM "",                            IDM_
+    END
+    POPUP "&Utilities"
+    BEGIN
+        MENUITEM "&Create test certificates",   IDM_UTIL_CERT
+        MENUITEM "Import certificate",          IDM_UTIL_IMPORT
+        MENUITEM "&List certificates",          IDM_UTIL_LIST
+        MENUITEM "Show Security Descriptor",    IDM_UTIL_SHOWSD
+        MENUITEM "Delete certificate",          IDM_UTIL_DELETE
+        MENUITEM "Clear all data on the card",  IDM_UTIL_CLEAR
+        MENUITEM "Get CSP Info from User certificate store", IDM_UTIL_CSPINFO
+        MENUITEM "Set force smartcard flag",    IDM_UTIL_SETSMARTCARDFLAG
+        MENUITEM "Unset smartcard flag",        IDM_UTIL_UNSETSMARTCARDFLAG
+    END
+    POPUP "Info"
+    BEGIN
+        MENUITEM "List CSP",                    IDM_INFO_CSP
+        MENUITEM "Compute SHA1 Hash",           IDM_INFO_HASHSHA1
+        MENUITEM "Test KSP",                    IDM_SM_KSP
+        MENUITEM "View Tracing",                IDM_INFO_TRACING
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_NAMETOTTOKEN DIALOGEX 65534, 65523, 170, 73
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "EIDTest"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDT1,72,9,81,15,NOT WS_BORDER,WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "OK",IDOK,57,54,50,14,WS_GROUP
+    LTEXT           "Username",IDC_STC1,12,9,48,15,NOT WS_GROUP
+    LTEXT           "Domain",IDC_STC2,12,30,48,15,NOT WS_GROUP
+    EDITTEXT        IDC_EDT2,72,30,81,15,NOT WS_BORDER,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Cancel",IDCANCEL,114,54,50,14,WS_GROUP
+END
+
+IDD_MAIN DIALOGEX 10, 10, 394, 181
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Test"
+MENU IDC_EIDCARDLIBRARYTEST
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+END
+
+IDD_CERTIFICATE DIALOGEX 65532, 65520, 253, 169
+STYLE DS_SETFONT | DS_CENTER | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Certificate"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "Server Authentication",IDC_SERVERAUTH,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,96,90,9
+    EDITTEXT        IDC_SUBJECT,75,12,117,13,NOT WS_BORDER,WS_EX_CLIENTEDGE
+    LTEXT           "Subject",IDC_STC3,33,12,33,12,NOT WS_GROUP
+    DEFPUSHBUTTON   "OK",IDC_OK,154,144,42,18
+    PUSHBUTTON      "Cancel",IDC_Cancel,202,144,42,18
+    CONTROL         "At KeyExchange",IDC_ATKEY,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,9,150,129,9
+    CONTROL         "At Signature",IDC_ATSIGN,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,9,138,129,9
+    CONTROL         "SelfSigned Certificate",IDC_SELFSIGNED,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,151,90,84,13
+    CONTROL         "Certificate signed by ...",IDC_SIGNEDBY,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,151,105,84,15
+    PUSHBUTTON      "...",IDC_SELECTROOT,235,105,15,15
+    COMBOBOX        IDC_SAVEON,150,123,99,81,CBS_DROPDOWNLIST | WS_TABSTOP
+    CONTROL         "Certification Authority",IDC_CA,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,120,87,9
+    CONTROL         "",IDC_DTP1,"SysDateTimePick32",DTS_LONGDATEFORMAT | WS_TABSTOP,75,30,118,12
+    CONTROL         "Client Authentication",IDC_CLIENTAUTH,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,84,90,9
+    CONTROL         "EFS",IDC_EFS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,108,90,9
+    CONTROL         "Smart Card Authentication",IDC_SCAUTH,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,72,93,9
+    LTEXT           "Valid until",IDC_STC4,33,48,36,15,NOT WS_GROUP
+    CONTROL         "",IDC_DTP2,"SysDateTimePick32",DTS_LONGDATEFORMAT | WS_TABSTOP,75,48,118,12
+    LTEXT           "Valid since",IDC_STC5,30,33,36,15,NOT WS_GROUP
+    LTEXT           "Key size",IDC_STC7,150,72,33,12,NOT WS_GROUP
+    COMBOBOX        IDC_KEYSIZE,189,69,60,81,CBS_DROPDOWNLIST | WS_TABSTOP
+END
+
+IDD_PASSWORD DIALOGEX 65532, 65520, 169, 52
+STYLE DS_SETFONT | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Password"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_PIN,63,12,81,15,NOT WS_BORDER,WS_EX_CLIENTEDGE
+    LTEXT           "Password",IDC_STC6,3,12,48,15,NOT WS_GROUP
+    PUSHBUTTON      "Cancel",IDC_PINCANCEL,105,36,50,14,WS_GROUP
+    DEFPUSHBUTTON   "OK",IDC_PINOK,48,36,50,14,WS_GROUP
+END
+
+IDD_CSPINFO DIALOGEX 65532, 65520, 373, 160
+STYLE DS_SETFONT | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "IDD_DLG"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    COMBOBOX        IDC_PROVTYPE,3,9,141,78,CBS_DROPDOWNLIST | WS_TABSTOP
+    COMBOBOX        IDC_PROVNAME,156,9,210,81,CBS_DROPDOWNLIST | WS_TABSTOP
+    LISTBOX         IDC_LSTALG,6,27,357,96,LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | NOT WS_BORDER | WS_VSCROLL | WS_TABSTOP,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Cancel",IDC_CSPCANCEL,321,138,42,18
+    DEFPUSHBUTTON   "OK",IDC_CSPOK,273,138,42,18
+END
+
+IDD_TRACE DIALOGEX 10, 10, 421, 295
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Tracing"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_TRACE,0,0,351,267,ES_MULTILINE | ES_READONLY | NOT WS_BORDER | WS_VSCROLL,WS_EX_CLIENTEDGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_APP_TITLE           "EIDCardLibraryTest"
+    IDC_EIDCARDLIBRARYTEST  "EIDCARDLIBRARYTEST"
+END
+
+#endif    // Neutre (Par défaut) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Français (France) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)
+LANGUAGE LANG_FRENCH, SUBLANG_FRENCH
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Français (France) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

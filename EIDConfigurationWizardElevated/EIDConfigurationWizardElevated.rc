@@ -1,0 +1,181 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "EIDConfigurationWizardElevated.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "../EIDCardLibrary/EIDAuthenticateVersion.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutre resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION EIDAuthenticateVersionNumeric
+ PRODUCTVERSION EIDAuthenticateVersionNumeric
+ FILEFLAGSMASK 0x0L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "CompanyName", "www.mysmartlogon.com"
+            VALUE "FileDescription", "Configuration Wizard Elevated"
+            VALUE "FileVersion", EIDAuthenticateVersionText
+            VALUE "InternalName", "EIDConfigurationWizardElevated.exe"
+            VALUE "OriginalFilename", "EIDConfigurationWizardElevated.exe"
+            VALUE "ProductName", "EID Configuration Wizard"
+            VALUE "ProductVersion", EIDAuthenticateVersionText
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END
+
+#endif    // Neutre resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Anglais (États-Unis) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "EIDConfigurationWizardElevated.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+	"#include ""../EIDCardLibrary/EIDAuthenticateVersion.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_DIALOGREMOVEPOLICY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 285
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 228
+    END
+
+    IDD_DIALOGFORCEPOLICY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 288
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOGREMOVEPOLICY DIALOGEX 0, 0, 292, 235
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Smart card settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,178,214,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,235,214,50,14
+    LTEXT           "The smart card removal policy is applicable when a user has logged on with a smart card and subsequently removes that smart card from the reader. Please choose the action that is performed when the smart card is removed :",IDC_STATIC,7,18,258,34
+    CONTROL         "No Action",IDC_NOACTION,"Button",BS_AUTORADIOBUTTON,26,56,197,18
+    CONTROL         "Lock Workstation",IDC_LOCK,"Button",BS_AUTORADIOBUTTON,26,75,202,20
+    CONTROL         "Log Off",IDC_LOGOFF,"Button",BS_AUTORADIOBUTTON,26,114,219,18
+    CONTROL         "Disconnect from remote Terminal Server Session",IDC_DISCONNECT,
+                    "Button",BS_AUTORADIOBUTTON,25,148,236,14
+    LTEXT           "The removal of the smart card disconnects the session without logging the user off. This allows the user to insert the smart card and resume the session later, or at another smart card reader-equipped terminal, without having to log on again.",IDC_STATIC,25,164,226,36
+    LTEXT           "The user is logged off on Smart Card removal",IDC_STATIC,26,133,227,11
+    LTEXT           "The user session is locked on Smart Card removal",IDC_STATIC,26,97,238,13
+END
+
+IDD_DIALOGFORCEPOLICY DIALOGEX 0, 0, 295, 183
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Smart card settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,181,162,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,238,162,50,14
+    LTEXT           "Enforce Smart Card required for Logon on a per machine basis.",IDC_STATIC,7,7,281,17
+    CONTROL         "Disable (recommended)",IDC_FORCEDISABLE,"Button",BS_AUTORADIOBUTTON,31,65,185,13
+    CONTROL         "Enable (not recommended)",IDC_FORCEENABLE,"Button",BS_AUTORADIOBUTTON,31,113,239,13
+    LTEXT           "Users can log on to the computer using any method",IDC_STATIC,31,81,166,8
+    LTEXT           "Users can only log on to the computer using a smart card. ",IDC_STATIC,31,130,197,11
+    LTEXT           "You won't be able to logon anymore if you have lost your smart card or if it has expired.",IDC_STATIC,7,25,273,35
+END
+
+#endif    // Anglais (États-Unis) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

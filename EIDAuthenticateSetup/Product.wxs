@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<?include $(sys.SOURCEFILEDIR)include.wxi ?>
+	<Product Id="$(var.ProductCode)" Codepage="1252" Language="0" 
+			 Manufacturer="My Smart Logon" 
+			 Name="EIDAuthenticate" 
+			 Version="!(bind.FileVersion.EIDAuthenticationPackage)" 
+			 UpgradeCode="$(var.UpgradeCode)">
+		<Package Compressed="yes" InstallerVersion="200" 
+				Languages="0" 
+				Manufacturer="My Smart Logon" 
+				InstallPrivileges="elevated"
+				InstallScope="perMachine" Platform="$(var.Platform)"
+				Description="$(var.ProductName)"/>
+		<Upgrade Id="$(var.UpgradeCode)">
+			<UpgradeVersion OnlyDetect="yes" Minimum="!(bind.FileVersion.EIDAuthenticationPackage)" Property="NEWERVERSIONDETECTED" IncludeMinimum="no" />
+			<UpgradeVersion OnlyDetect="no" Maximum="!(bind.FileVersion.EIDAuthenticationPackage)" Property="OLDERVERSIONBEINGUPGRADED" IncludeMaximum="no" />
+		</Upgrade>
+
+		<Condition Message="An administrator must approve or install [ProductName].">
+			Privileged
+		</Condition>
+
+		<!-- do not edit the rtf file with word! The installer will be unable to read the license -->
+		<WixVariable Id="WixUILicenseRtf" Value="license.rtf" />
+		<WixVariable Id="WixUIBannerBmp" Value="bannrbmp.bmp"/>
+		<WixVariable Id="WixUIDialogBmp" Value="dlgbmp.bmp"/>
+		<Condition Message="These application needs Windows Vista or later">
+			<![CDATA[VersionNT >= 600]]>
+		</Condition>
+		<Condition Message="These application requires the service pack 1">
+			<![CDATA[not (WindowsBuild = 6000)]]>
+		</Condition>
+		
+		<?if $(var.Platform) = x64 ?>
+			<Condition Message="This setup has been design for 64-bit versions of Windows.  Please run the setup on 64-bit Windows or get the 32 bits setup.">
+				VersionNT64
+			</Condition>
+		<?else?>
+			<Condition Message="This setup has been design for 32-bit versions of Windows.  Please run the setup on 32-bit Windows or get the 64 bits setup.">
+				Not VersionNT64
+			</Condition>
+		<?endif?>
+
+		<Property Id="ARPHELPLINK" Value="http://www.mysmartlogon.com" />
+		<Property Id="ARPCONTACT" Value="My Smart Logon" />
+		<Property Id="HASALREADYBEENINSTALLED">
+			<DirectorySearch Id="AuthenticationPackageDirectory" Path="[$(var.PlatformSystemFolder)]">
+				<FileSearch Id="FileSearchEIDAuthenticationPackage" Name="EIDAuthenticationPackage.dll"/>
+			</DirectorySearch>
+		</Property>
+
+		<Condition Message="Please uninstall previous version of EIDAuthenticate first">
+			<![CDATA[  (Installed) Or (Not HASALREADYBEENINSTALLED)]]>
+		</Condition>
+		
+        <CustomAction Id="UninstallEIDAuthenticate" FileKey="EIDAuthenticationPackage" DllEntry="Uninstall" Execute="deferred" Impersonate="no" />
+        <CustomAction Id="CommitEIDAuthenticate" FileKey="EIDAuthenticationPackage" DllEntry="Commit" Execute="commit" Impersonate="no"/>
+		<!-- Prevent downgrading -->
+		<CustomAction Id="PreventDowngrading"
+					  Error="Newer version already installed." />
+		
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="$(var.PlatformSystemFolder)" SourceName="System Folder">
+				        <Component Id="EIDAuthenticationPackage" Guid="d607063e-497c-41a5-a559-1d02be3f6d95">
+					        <File Id="EIDAuthenticationPackage" Name="EIDAuthenticationPackage.dll" KeyPath="yes" DiskId="1" Source="$(var.SourceDir)\EIDAuthenticationPackage.dll" Checksum="yes"/>
+                  <RegistryKey Root="HKLM" Key="SYSTEM\CurrentControlSet\Control\Lsa">
+                    <RegistryValue Action="append" Type="multiString" Name="Security Packages" Value="EIDAuthenticationPackage"/>
+                  </RegistryKey>
+				        </Component>
+              
+				        <Component Id="EIDCredentialProvider" Guid="7df570f5-ca89-4f5c-bcf0-38ef4e38b53e">
+					        <File Id="EIDCredentialProvider" Name="EIDCredentialProvider.dll" KeyPath="yes" DiskId="1" Source="$(var.SourceDir)\EIDCredentialProvider.dll" Checksum="yes"/>
+                  <RegistryKey Root="HKLM"
+                            Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\Credential Providers\{B4866A0A-DB08-4835-A26F-414B46F3244C}">
+                      <RegistryValue Type="string" Value="EidCredentialProvider"/>
+                  </RegistryKey>
+                  <RegistryKey Root="HKCR" Key="CLSID\{B4866A0A-DB08-4835-A26F-414B46F3244C}">
+                    <RegistryValue Type="string" Value="EidCredentialProvider"/>
+                    <RegistryKey Key="InprocServer32">
+                      <RegistryValue Type="string" Value="EidCredentialProvider.dll"/>
+                      <RegistryValue Type="string" Name="ThreadingModel" Value="Apartment"/>
+                    </RegistryKey>
+                  </RegistryKey>
+                </Component>
+              
+				        <Component Id="EIDConfigurationWizard" Guid="d3dec3cd-db08-4377-9d4d-2459c457eff5">
+                  <File Id="EIDConfigurationWizard" Name="EIDConfigurationWizard.exe" KeyPath="yes" DiskId="1" Source="$(var.SourceDir)\EIDConfigurationWizard.exe" Checksum="yes"/>
+                  <File Id="EIDConfigurationWizardElevated" Name="EIDConfigurationWizardElevated.exe" DiskId="1" Source="$(var.SourceDir)\EIDConfigurationWizardElevated.exe" Checksum="yes"/>
+                  <RegistryKey Root="HKLM"
+                          Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel\NameSpace\{F5D846B4-14B0-11DE-B23C-27A355D89593}">
+                    <RegistryValue Type="string" Value="EIDConfigurationWizard"/>
+                  </RegistryKey>
+                  <RegistryKey Root="HKCR" Key="CLSID\{F5D846B4-14B0-11DE-B23C-27A355D89593}">
+                    <RegistryValue Type="string" Value="EIDConfigurationWizard"/>
+                    <RegistryValue Type="string" Name="System.ApplicationName" Value="EID.EIDConfigurationWizard"/>
+                    <RegistryValue Type="string" Name="System.ControlPanel.Category" Value="10"/>
+                    <RegistryValue Type="string" Name="LocalizedString" Value="Smart Card Logon"/>
+                    <RegistryValue Type="string" Name="InfoTip" Value="Smart Card Logon"/>
+                    <RegistryValue Type="expandable" Name="System.Software.TasksFileUrl" Value="%SystemRoot%\system32\EIDConfigurationWizard.exe,-68"/>
+                    <RegistryValue Type="expandable" Key="DefaultIcon" Value="%SystemRoot%\system32\imageres.dll,-58"/>
+                    <RegistryValue Type="expandable" Key="Shell\Open\Command" Value="%SystemRoot%\system32\EIDConfigurationWizard.exe"/>
+                  </RegistryKey>   
+                </Component>
+              
+				        <Component Id="EIDPasswordChangeNotification" Guid="8a8368f9-c785-427f-906c-d17ba5dbdb52">
+                  <File Id="EIDPasswordChangeNotification" Name="EIDPasswordChangeNotification.dll" KeyPath="yes" DiskId="1" Source="$(var.SourceDir)\EIDPasswordChangeNotification.dll" Checksum="yes"/>
+                  <RegistryKey Root="HKLM" Key="SYSTEM\CurrentControlSet\Control\Lsa">
+                    <RegistryValue Action="append" Type="multiString" Name="Notification Packages" Value="EIDPasswordChangeNotification"/>
+                  </RegistryKey>
+                </Component>
+
+               <?if $(var.Configuration) = "Debug"?>
+					        <Component Id="EIDAuthenticationPackageDebug" Guid="aa8954fd-8930-496a-b152-3690b43ddad6">
+						        <File Id="EIDAuthenticationPackageDebug" Name="EIDAuthenticationPackage.pdb" KeyPath="yes" DiskId="1" Source="$(var.SourceDir)\EIDAuthenticationPackage.pdb" Checksum="yes"/>
+					        </Component>
+					        <Component Id="EIDCredentialProviderDebug" Guid="414182f5-e190-4b4d-b767-23ee863daf81">
+						        <File Id="EIDCredentialProviderDebug" Name="EIDCredentialProvider.pdb" KeyPath="yes" DiskId="1" Source="$(var.SourceDir)\EIDCredentialProvider.pdb" Checksum="yes"/>
+					        </Component>
+					        <Component Id="EIDConfigurationWizardDebug" Guid="707dac8a-9487-4a61-a364-05c30be64747">
+						        <File Id="EIDConfigurationWizardDebug" Name="EIDConfigurationWizard.pdb" KeyPath="yes" DiskId="1" Source="$(var.SourceDir)\EIDConfigurationWizard.pdb" Checksum="yes"/>
+                    <File Id="EIDConfigurationWizardElevatedDebug" Name="EIDConfigurationWizardElevated.pdb" DiskId="1" Source="$(var.SourceDir)\EIDConfigurationWizardElevated.pdb" Checksum="yes"/>
+					        </Component>
+					        <Component Id="EIDPasswordChangeNotificationDebug" Guid="4665d665-2c5a-4300-9661-4478b9e96f42">
+						        <File Id="EIDPasswordChangeNotificationDebug" Name="EIDPasswordChangeNotification.pdb" KeyPath="yes" DiskId="1" Source="$(var.SourceDir)\EIDPasswordChangeNotification.pdb" Checksum="yes"/>
+					        </Component>
+				        <?endif?>
+            </Directory>
+        </Directory>
+        <Feature Id="DefaultFeature" ConfigurableDirectory="TARGETDIR" Level="1">
+            <ComponentRef Id="EIDAuthenticationPackage" />
+			<ComponentRef Id="EIDCredentialProvider" />
+			<ComponentRef Id="EIDConfigurationWizard" />
+			<ComponentRef Id="EIDPasswordChangeNotification" />
+      <?if $(var.Configuration) = "Debug"?>
+				<ComponentRef Id="EIDAuthenticationPackageDebug" />
+				<ComponentRef Id="EIDCredentialProviderDebug" />
+				<ComponentRef Id="EIDConfigurationWizardDebug" />
+				<ComponentRef Id="EIDPasswordChangeNotificationDebug" />
+			<?endif?>
+		</Feature>
+        <Media Id="1" Cabinet="eidauthenticate.cab" EmbedCab="yes" />
+		
+		<UIRef Id="WixUI_Minimal"/>
+		<UIRef Id="WixUI_ErrorProgressText" />
+		<InstallExecuteSequence>
+			<Custom Action="PreventDowngrading" After="FindRelatedProducts">NEWPRODUCTFOUND</Custom>
+			<RemoveExistingProducts After="InstallFinalize" />
+			<Custom Action='UninstallEIDAuthenticate' Before="RemoveFiles">REMOVE="ALL"</Custom>
+			<Custom Action='CommitEIDAuthenticate' Before='InstallFinalize'>Not REMOVE</Custom>
+      <ScheduleReboot After="InstallFinalize">EIDInstallMustReboot</ScheduleReboot>
+      <Custom Action="WixCheckRebootRequired" After="InstallFinalize"></Custom>
+		</InstallExecuteSequence>
+
+	</Product>
+</Wix>

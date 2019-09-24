@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<applications xmlns="http://schemas.microsoft.com/windows/cpltasks/v1" xmlns:sh="http://schemas.microsoft.com/windows/tasks/v1"
+    xmlns:sh2="http://schemas.microsoft.com/windows/tasks/v2">
+	<application id="{F5D846B4-14B0-11DE-B23C-27A355D89593}">
+		<sh:task id="{C8608844-5889-11E0-8797-5DD4DED72085}" needsElevation="true">
+			<sh:name>@EIDConfigurationWizard.exe,-62</sh:name>
+			<sh:command>%windir%\system32\EIDConfigurationWizardElevated.exe DIALOGREMOVEPOLICY</sh:command>
+		</sh:task>
+		<sh:task id="{79993D30-5895-11E0-B839-38E0DED72085}" needsElevation="true">
+			<sh:name>@EIDConfigurationWizard.exe,-63</sh:name>
+			<sh:command>%windir%\system32\EIDConfigurationWizardElevated.exe DIALOGFORCEPOLICY</sh:command>
+		</sh:task>
+		<category id="10">
+			<sh:task idref="{C8608844-5889-11E0-8797-5DD4DED72085}" />
+			<sh:task idref="{79993D30-5895-11E0-B839-38E0DED72085}" />
+		</category>
+	</application>
+</applications>

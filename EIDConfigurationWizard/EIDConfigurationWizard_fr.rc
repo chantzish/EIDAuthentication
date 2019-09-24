@@ -1,0 +1,273 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "EIDConfigurationWizard_fr.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "EIDConfigurationWizard.h"
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Français resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)
+LANGUAGE LANG_FRENCH, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_01MAIN DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    CONTROL         "Modifier les informations d'identification",IDC_01CHANGE,
+                    "Button",BS_COMMANDLINK | WS_TABSTOP,21,21,216,33
+    CONTROL         "Désactiver l'ouverture de session par carte à puce",IDC_01DELETE,
+                    "Button",BS_COMMANDLINK | WS_TABSTOP,21,69,216,33
+END
+
+IDD_02ENABLE DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    CONTROL         "Utiliser une carte à puce préconfigurée",IDC_02EXISTING,
+                    "Button",BS_COMMANDLINK | WS_TABSTOP,21,21,216,36
+    CONTROL         "Définir un nouveau jeu d'informations d'authentification",IDC_02NEW,
+                    "Button",BS_COMMANDLINK | WS_TABSTOP,21,69,216,45
+    CONTROL         "<a  id=""idDatabase"">Rechercher en ligne des problèmes déjà signalés</a>",IDC_SYSLINKHELP,
+                    "SysLink",WS_TABSTOP,25,185,223,8
+    CONTROL         "Désactiver l'ouverture de session par carte à puce",IDC_01DELETE,
+                    "Button",BS_COMMANDLINK | WS_TABSTOP,21,117,216,33
+END
+
+IDD_05PASSWORD DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    LTEXT           "Mot de passe :",-1,9,111,60,10
+    EDITTEXT        IDC_05PASSWORD,99,112,109,11,ES_PASSWORD | ES_AUTOHSCROLL | NOT WS_BORDER,WS_EX_CLIENTEDGE
+    CONTROL         "Exécuter un test de connection à la fin de cet assistant",IDC_05TEST,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,156,255,13
+    LTEXT           "Selectionner un certificat",IDC_STC4,0,0,272,20
+    CONTROL         "",IDC_05LIST,"SysListView32",LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_TABSTOP,0,24,273,51,WS_EX_CLIENTEDGE
+    LTEXT           "Veuillez saisir votre mot de passe",IDC_STC5,0,84,272,20
+END
+
+IDD_03NEW DIALOGEX 65535, 65523, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    LTEXT           "Sélectionner une authorité de confiance",1007,3,15,272,12
+    CONTROL         "&Utiliser cette authorité",IDC_03USETHIS,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,3,48,163,10
+    CONTROL         "&Créer un certificat racine auto-signé",IDC_03_CREATE,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,3,30,185,10
+    CONTROL         "&Importer un fichier p12 sur la carte à puce",IDC_03IMPORT,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,3,138,185,10
+    LTEXT           "&Détails du certificat racine :",1009,12,78,250,10
+    LISTBOX         IDC_03CERTIFICATEPANEL,9,90,175,45,NOT LBS_NOTIFY | LBS_NOSEL | WS_TABSTOP
+    PUSHBUTTON      "&Afficher le certificat",IDC_03SHOW,192,87,81,12
+    PUSHBUTTON      "&Sélectionner un certificat",IDC_03SELECT,192,105,81,12
+    EDITTEXT        IDC_03IMPORTPASSWORD,96,171,162,11,ES_PASSWORD | ES_AUTOHSCROLL | NOT WS_BORDER,WS_EX_CLIENTEDGE
+    LTEXT           "Mot de passe :",IDC_STC2,6,171,60,10
+    LTEXT           "Fichier :",IDC_STC3,6,153,60,10
+    EDITTEXT        IDC_03FILENAME,96,153,162,11,ES_AUTOHSCROLL | NOT WS_BORDER,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "...",IDC_03SELECTFILE,258,153,12,12
+    CONTROL         "Supprimer tous les certificats avant de procéder",IDC_03DELETE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,192,261,9
+END
+
+IDD_04CHECKS DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_04LIST,"SysListView32",LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_TABSTOP,0,24,273,51,WS_EX_CLIENTEDGE
+    CONTROL         "",IDC_04CHECKS,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_AUTOARRANGE | LVS_NOCOLUMNHEADER | WS_TABSTOP,0,108,273,99,WS_EX_CLIENTEDGE
+    LTEXT           "Selectionner un certificat",IDC_STC1,0,0,272,20
+    CONTROL         "<a id=""idrefresh"">Rafraîchir</a>",IDC_04REFRESH,
+                    "SysLink",WS_TABSTOP,240,78,30,9
+END
+
+IDD_06TESTRESULTOK DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    LTEXT           "Le test s'est déroulé avec succès. Vous pouvez désormais utiliser votre carte à puce pour ouvrir une session.",IDC_STC7,35,11,231,32
+    LTEXT           "Tâches supplémentaires :",IDC_STATIC,13,107,204,13
+    CONTROL         "Rapporter automatiquement que ce modèle de carte fonctionne correctement",IDC_06UPDATEDATABASE,
+                    "Button",BS_COMMANDLINK | WS_TABSTOP,21,116,216,33
+    ICON            "",IDC_06SHIELD,10,10,20,20
+END
+
+IDD_07TESTRESULTNOTOK DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    CONTROL         "Soumettre un rapport à l'équipe de support",IDC_07SENDREPORT,
+                    "Button",BS_COMMANDLINK | WS_TABSTOP,21,112,216,23
+    LTEXT           "Vous pouvez indiquer de manière optionnelle un email :",IDC_EMAILLBL,21,141,237,12
+    EDITTEXT        IDC_07EMAIL,76,154,118,13,ES_AUTOHSCROLL
+    LTEXT           "Email (optionnel) :",IDC_EMAILSEND,21,155,53,11
+    LTEXT           "Le test a échoué. Vous pouvez effectuer un nouveau test ou contacter notre support.",IDC_STC6,37,7,228,22
+    LTEXT           "Description de l'erreur",IDC_WIZARDERROR,37,41,221,33
+    LTEXT           "Détails :",IDC_STATIC,37,27,105,9
+    ICON            "",IDC_07SHIELD,10,10,20,20
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_01MAIN, DIALOG
+    BEGIN
+    END
+
+    IDD_02ENABLE, DIALOG
+    BEGIN
+    END
+
+    IDD_05PASSWORD, DIALOG
+    BEGIN
+    END
+
+    IDD_03NEW, DIALOG
+    BEGIN
+    END
+
+    IDD_04CHECKS, DIALOG
+    BEGIN
+    END
+
+    IDD_06TESTRESULTOK, DIALOG
+    BEGIN
+    END
+
+    IDD_07TESTRESULTNOTOK, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "EIDConfigurationWizard_fr.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""EIDConfigurationWizard.h""\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_04SIGNATUREONLYOK   "La clé associée au certificat peut être utilisé"
+    IDS_04SIGNATUREONLYNOK  "Le certificat est associé à une clé ne pouvant être utilisée que pour signer des données"
+    IDS_04CHANGESIGNATUREPOLICY "Modifier la politique de Windows"
+    IDS_AREYOUSURE          "Etes-vous sûr ?"
+    IDS_EIDNOTAVAILABLE     "Authentication package non disponible"
+    IDS_TITLE0              "Gestion des information d'authentification"
+    IDS_TITLE1              "Configurer l'ouverture de session par carte à puce"
+    IDS_TITLE2              "Configurer une carte à puce"
+    IDS_TITLE3              "Vérifier le status d'une carte à puce"
+    IDS_TITLE4              "Entrer votre mot de passe"
+    IDS_CAPTION             "Configuration de l'ouverture de session par carte à puce"
+    IDS_03OBJECT            "Objet : %s"
+    IDS_03DELIVERED         "Deliveré : %s %s"
+    IDS_03EXPIRES           "Expire : %s %s"
+    IDS_03CONTAINERFILES    "Container Files"
+    IDS_03ALLFILES          "All Files"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_03CERTVIEWTITLE     "Info"
+    IDS_WRONGPIN_RETRIES    "Un mauvais PIN a été présenté à la carte : il reste %d essais"
+    IDS_05CREDINFOCAPTION   "Test"
+    IDS_05CREDINFOCONFIRMTITLE "Résultat"
+    IDS_05CREDINFOCONFIRMMESSAGE "Information d'authentification valide"
+    IDS_04TRUSTOK           "Le certificat est valide"
+    IDS_04TRUSTNOK          "Erreur"
+    IDS_04ENCRYPTIONOK      "La carte supporte d'encryption"
+    IDS_04ENCRYPTIONNOK     "La carte ne supporte pas l'encryption"
+    IDS_04TESTUSERNAME      "Nom d'utilisateur"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_04TESTTRUST         "Confiance"
+    IDS_04TESTCRYPTO        "Crypto"
+    IDS_04TRUSTENABLENOEKU  "Ne pas vérifier l'EKU"
+    IDS_04TESTSIGNATURE     "Crypto"
+    IDS_02EXISTINGNOTE      "Choississez cette option si vous disposez d'une carte à puce déjà configurée"
+    IDS_02NEWNOTE           "Choississez cette option si vous disposez d'une carte à puce vierge"
+    IDS_TITLE5              "Résultat du test"
+    IDS_CHECKDRIVERONLINE   "EIDAuthenticate a détecté que la carte à puce que vous utilisez (ATR:%s) ne possède pas de pilote. Voulez-vous rechercher dans notre base de données une solution ?"
+    IDS_TURNREMOVALPOLICY   "Activer ou désactiver la politique de retrait"
+    IDS_TURNFORCEPOLICY     "Décider de l'obligation d'utiliser une carte à puce"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_NO_CERTIFICATE      "Il n'y a pas de certificat"
+    IDS_04TRUSTENABLETIMEINVALID "Ignorer la validation temporelle"
+    IDS_04TRUSTMAKETRUSTED  "Faire confiance au certificat"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_NODOMAINACCOUNT     "EIDAuthenticate ne fonctionne pas sur des comptes appartenant à un domaine. EIDAuthenticate ne fonctionne que sur les postes non connectés à un domaine ou avec un compte local."
+END
+
+#endif    // Français resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

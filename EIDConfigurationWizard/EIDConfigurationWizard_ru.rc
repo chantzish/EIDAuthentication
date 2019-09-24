@@ -1,0 +1,262 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "EIDConfigurationWizard_ru.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "EIDConfigurationWizard.h"
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russe resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+LANGUAGE LANG_RUSSIAN, SUBLANG_NEUTRAL
+#pragma code_page(1251)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_01MAIN DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    CONTROL         "Изменение учетных данных смарт-карты",IDC_01CHANGE,
+                    "Button",BS_COMMANDLINK | WS_TABSTOP,21,21,216,33
+    CONTROL         "Отключить авторизацию по смарт-карте",IDC_01DELETE,
+                    "Button",BS_COMMANDLINK | WS_TABSTOP,21,69,216,33
+END
+
+IDD_02ENABLE DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    CONTROL         "Использовать настроенную смарт-карту",IDC_02EXISTING,
+                    "Button",BS_COMMANDLINK | WS_TABSTOP,21,21,216,39
+    CONTROL         "Настройка нового набора учетных данных",IDC_02NEW,
+                    "Button",BS_COMMANDLINK | WS_TABSTOP,21,69,216,33
+    CONTROL         "<a  id=""idDatabase"">Check online database for known incompatibilities</a>",IDC_SYSLINKHELP,
+                    "SysLink",WS_TABSTOP,25,185,223,8
+    CONTROL         "Отключить авторизацию по смарт-карте",IDC_01DELETE,
+                    "Button",BS_COMMANDLINK | WS_TABSTOP,21,115,216,33
+END
+
+IDD_05PASSWORD DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    LTEXT           "Пароль :",-1,9,112,60,10
+    EDITTEXT        IDC_05PASSWORD,99,112,109,11,ES_PASSWORD | ES_AUTOHSCROLL | NOT WS_BORDER,WS_EX_CLIENTEDGE
+    CONTROL         "Запуск теста после завершения работы мастера",IDC_05TEST,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,156,255,13
+    LTEXT           "Выбор сертификата",IDC_STC4,0,0,272,20
+    CONTROL         "",IDC_05LIST,"SysListView32",LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_TABSTOP,0,24,273,51,WS_EX_CLIENTEDGE
+    LTEXT           "Ввод пароля",IDC_STC5,0,84,272,20
+END
+
+IDD_03NEW DIALOGEX 65535, 65523, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    LTEXT           "Это мастер создания сертификата смарт-карты на основе центра сертификации. Пожалуйста, выберите центр сертфикации:",1007,3,18,272,20
+    CONTROL         "&Использовать указанный центр сертификации",IDC_03USETHIS,
+                    "Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,6,57,163,10
+    CONTROL         "&Создать новый центр сертификации",IDC_03_CREATE,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,6,39,185,10
+    CONTROL         "&Импортировать файл p12 на смарт-карту",IDC_03IMPORT,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,3,138,185,10
+    LTEXT           "&Центр сертификации:",1009,12,78,250,10
+    LISTBOX         IDC_03CERTIFICATEPANEL,9,90,175,45,NOT LBS_NOTIFY | LBS_NOSEL | WS_TABSTOP
+    PUSHBUTTON      "&Показать сертификат",IDC_03SHOW,192,87,81,12
+    PUSHBUTTON      "&Выбрать Центр",IDC_03SELECT,192,105,81,12
+    EDITTEXT        IDC_03IMPORTPASSWORD,96,171,162,11,ES_PASSWORD | ES_AUTOHSCROLL | NOT WS_BORDER,WS_EX_CLIENTEDGE
+    LTEXT           "Пароль:",IDC_STC2,6,171,60,10
+    LTEXT           "Файл:",IDC_STC3,6,153,60,10
+    EDITTEXT        IDC_03FILENAME,96,153,162,11,ES_AUTOHSCROLL | NOT WS_BORDER,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "...",IDC_03SELECTFILE,258,153,12,12
+    CONTROL         "Удалить все сертификаты со смарт-карты до начала работы",IDC_03DELETE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,192,261,9
+END
+
+IDD_04CHECKS DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_04LIST,"SysListView32",LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_TABSTOP,0,24,273,51,WS_EX_CLIENTEDGE
+    CONTROL         "",IDC_04CHECKS,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_AUTOARRANGE | LVS_NOCOLUMNHEADER | WS_TABSTOP,0,108,273,99,WS_EX_CLIENTEDGE
+    LTEXT           "Выбор сертификата",IDC_STC1,0,0,272,20
+    CONTROL         "<a id=""idrefresh"">Обновить</a>",IDC_04REFRESH,"SysLink",WS_TABSTOP,246,78,24,9
+END
+
+IDD_06TESTRESULTOK DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    LTEXT           "Тестовый запуск прошел успешно. Теперь Вы можете использовать Вашу смарт-карту для входа в систему.",IDC_STC7,35,11,233,32
+    LTEXT           "Additional tasks :",IDC_STATIC,13,107,204,13
+    CONTROL         "Update automatically the status of this card as ""Working"" on the internet site",IDC_06UPDATEDATABASE,
+                    "Button",BS_COMMANDLINK | WS_TABSTOP,21,116,216,33
+    ICON            "",IDC_06SHIELD,10,10,20,20
+END
+
+IDD_07TESTRESULTNOTOK DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    CONTROL         "Отправить отчет в службу поддержки",IDC_07SENDREPORT,
+                    "Button",BS_COMMANDLINK | WS_TABSTOP,21,113,216,22
+    LTEXT           "Укажите адрес для получения обновлений от службы поддержки:",IDC_EMAILLBL,21,141,237,12
+    EDITTEXT        IDC_07EMAIL,76,154,118,13,ES_AUTOHSCROLL
+    LTEXT           "Email(необяз.):",IDC_EMAILSEND,21,155,53,11
+    LTEXT           "Тест не был пройден. Вы можете запустить тест еще раз или отправить отчет в службу поддержки.",IDC_STC6,34,6,228,22
+    LTEXT           "Описание ошибки:",IDC_WIZARDERROR,34,41,233,33
+    LTEXT           "Детали:",IDC_STATIC,35,27,105,9
+    ICON            "",IDC_07SHIELD,10,10,20,20
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_06TESTRESULTOK, DIALOG
+    BEGIN
+    END
+
+    IDD_07TESTRESULTNOTOK, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russe resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russe (Russe) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "EIDConfigurationWizard_ru.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""EIDConfigurationWizard.h""\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_04SIGNATUREONLYOK   "Ключ связанный с сертификатом может быть использован"
+    IDS_04SIGNATUREONLYNOK  "Ключ сертификата может быть использован только для подписи"
+    IDS_04CHANGESIGNATUREPOLICY "Изменить политику Windows"
+    IDS_AREYOUSURE          "Вы уверенны? "
+    IDS_EIDNOTAVAILABLE     "Проверки подлинности не доступна"
+    IDS_TITLE0              "Управление учетными данными"
+    IDS_TITLE1              "Настройка смарт-карты для входа в систему"
+    IDS_TITLE2              "Настройка смарт-карты"
+    IDS_TITLE3              "Проверить статус смарт-карты"
+    IDS_TITLE4              "Введите свой пароль"
+    IDS_CAPTION             "Конфигурация смарт-карты для входа в систему"
+    IDS_03OBJECT            "Объект : %s"
+    IDS_03DELIVERED         "Поставщик : %s %s"
+    IDS_03EXPIRES           "Истекает : %s %s"
+    IDS_03CONTAINERFILES    "Файлы контейнеров"
+    IDS_03ALLFILES          "Все файлы"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_03CERTVIEWTITLE     "Информация"
+    IDS_WRONGPIN_RETRIES    "Введен неверный ПИН-код : %d Осталось попыток"
+    IDS_05CREDINFOCAPTION   "Тест"
+    IDS_05CREDINFOCONFIRMTITLE "результат"
+    IDS_05CREDINFOCONFIRMMESSAGE "Учетные данные верны"
+    IDS_04TRUSTOK           "Сертификат верный"
+    IDS_04TRUSTNOK          "ошибка"
+    IDS_04ENCRYPTIONOK      "Карта поддерживает шифрование"
+    IDS_04ENCRYPTIONNOK     "Карта не поддерживает шифрование"
+    IDS_04TESTUSERNAME      "Пользователь"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_NODOMAINACCOUNT     "Внимание! EIDAuthenticate не поддерживает работу в домене. Используйте EIDAuthenticate только для локальных компьютеров и пользователей."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_04TESTTRUST         "Доверие"
+    IDS_04TESTCRYPTO        "Шифрование"
+    IDS_04TRUSTENABLENOEKU  "Не проверять расширенные параметры ключа"
+    IDS_04TESTSIGNATURE     "Ключи"
+    IDS_02EXISTINGNOTE      "Выберите эту опцию, если вы хотите использовать уже настроенную смарт-карту"
+    IDS_02NEWNOTE           "Выберите эту опцию, если вы хотите использовать новую смарт-карту"
+    IDS_TITLE5              "Результат теста"
+    IDS_CHECKDRIVERONLINE   "EIDAuthenticate обнаружил, что предоставленные Вами смарт-карты (ATR: %s ) не имеют драйверов. Вы хотели бы проверить нашу онлайновую базу данных для решения?"
+    IDS_TURNREMOVALPOLICY   "Включить/выключить политику извлечения смарт-карты"
+    IDS_TURNFORCEPOLICY     "Включить/выключит групповые политики смарт-карт"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_NO_CERTIFICATE      "Сертификаты не существуют"
+    IDS_04TRUSTMAKETRUSTED  "Сделать этот сертификат доверенным"
+	IDS_04TRUSTENABLETIMEINVALID "Allow time invalid certificates"
+END
+
+#endif    // Russe (Russe) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

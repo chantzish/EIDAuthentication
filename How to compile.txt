@@ -1,0 +1,6 @@
+download lastest version of 
+windows sdk
+Microsoft CNG Development Kit
+(http://www.microsoft.com/downloads/en/details.aspx?FamilyID=1ef399e9-b018-49db-a98b-0ced7cb8ff6f)
+WIX 3.5
+(http://wix.sourceforge.net/releases/3.5.2519.0/Wix35.msi)

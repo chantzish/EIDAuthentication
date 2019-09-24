@@ -1,0 +1,369 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "EIDConfigurationWizardXP_fr.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "EIDConfigurationWizardXP.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Français resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)
+LANGUAGE LANG_FRENCH, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_01MAIN DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "Modifier les informations d'identification",IDC_01CHANGE,
+                    "Button",BS_AUTORADIOBUTTON,17,25,240,13
+    CONTROL         "Désactiver l'ouverture de session par carte à puce",IDC_01DELETE,
+                    "Button",BS_AUTORADIOBUTTON,18,95,240,13
+    GROUPBOX        "",IDC_STATIC,8,13,256,49
+    GROUPBOX        "",IDC_STATIC,8,83,256,49
+END
+
+IDD_02ENABLE DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "",IDC_STATIC,8,13,256,49
+    CONTROL         "Utiliser une carte à puce préconfigurée",IDC_02EXISTING,
+                    "Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,17,25,240,13
+    CONTROL         "Définir un nouveau jeu d'informations d'authentification",IDC_02NEW,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,17,78,240,13
+    CONTROL         "Désactiver l'ouverture de session par carte à puce",IDC_01DELETE,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,17,130,240,13
+    LTEXT           "Choississez cette option si vous disposez d'une carte à puce déjà configurée",IDC_STATIC,27,41,234,19
+    GROUPBOX        "",IDC_STATIC,8,66,256,49
+    LTEXT           "Choississez cette option si vous disposez d'une carte à puce vierge",IDC_STATIC,25,94,235,11
+    GROUPBOX        "",IDC_STATIC,8,119,256,49
+    CONTROL         "<a  id=""idDatabase"">Rechercher en ligne des problèmes déjà signalés</a>",IDC_SYSLINKHELP,
+                    "SysLink",WS_TABSTOP,25,192,223,8
+    CONTROL         "<a  id=""idChangePin"">Changer le code PIN</a>",IDC_02CHANGEPIN,
+                    "SysLink",NOT WS_VISIBLE | WS_TABSTOP,26,177,223,8
+END
+
+IDD_03NEW DIALOGEX 65535, 65523, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "Sélectionner une authorité de confiance",1007,3,15,272,12
+    CONTROL         "&Utiliser cette authorité",IDC_03USETHIS,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,3,48,163,10
+    CONTROL         "&Créer un certificat racine auto-signé",IDC_03_CREATE,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,3,30,185,10
+    CONTROL         "&Importer un fichier p12 sur la carte à puce",IDC_03IMPORT,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,3,138,185,10
+    LTEXT           "&Détails du certificat racine :",1009,12,78,250,10
+    LISTBOX         IDC_03CERTIFICATEPANEL,9,90,175,45,NOT LBS_NOTIFY | LBS_NOSEL | WS_TABSTOP
+    PUSHBUTTON      "&Afficher le certificat",IDC_03SHOW,192,87,81,12
+    PUSHBUTTON      "&Sélectionner un certificat",IDC_03SELECT,192,105,81,12
+    EDITTEXT        IDC_03IMPORTPASSWORD,96,171,162,11,ES_PASSWORD | ES_AUTOHSCROLL | NOT WS_BORDER,WS_EX_CLIENTEDGE
+    LTEXT           "Mot de passe :",IDC_STC2,6,171,60,10
+    LTEXT           "Fichier :",IDC_STC3,6,153,60,10
+    EDITTEXT        IDC_03FILENAME,96,153,162,11,ES_AUTOHSCROLL | NOT WS_BORDER,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "...",IDC_03SELECTFILE,258,153,12,12
+    CONTROL         "Supprimer tous les certificats avant de procéder",IDC_03DELETE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,192,261,9
+END
+
+IDD_04CHECKS DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_04LIST,"SysListView32",LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_TABSTOP,0,24,273,51,WS_EX_CLIENTEDGE
+    LTEXT           "Selectionner un certificat",IDC_STC1,0,0,272,20
+    CONTROL         "<a id=""idrefresh"">Rafraîchir</a>",IDC_04REFRESH,
+                    "SysLink",WS_TABSTOP,240,78,30,9
+    GROUPBOX        "Contrôles",IDC_STATIC,2,94,270,110
+    ICON            "",IDC_04C1_ICON,11,107,18,17
+    ICON            "",IDC_04C2_ICON,11,139,18,17
+    ICON            "",IDC_04C3_ICON,11,171,18,17
+    LTEXT           "Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static ",IDC_04C1_RATIONAL,28,107,242,19
+    CONTROL         "<a>SysLink1</a>",IDC_04C1_LINK,"SysLink",WS_TABSTOP,29,125,241,8
+    LTEXT           "Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static ",IDC_04C2_RATIONAL,28,138,242,18
+    CONTROL         "<a>SysLink1</a>",IDC_04C2_LINK,"SysLink",WS_TABSTOP,29,158,241,8
+    LTEXT           "Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static ",IDC_04C3_RATIONAL,29,170,241,16
+    CONTROL         "<a>SysLink1</a>",IDC_04C3_LINK,"SysLink",WS_TABSTOP,30,191,240,8
+END
+
+IDD_05PASSWORD DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "Mot de passe :",-1,9,111,60,10
+    EDITTEXT        IDC_05PASSWORD,99,112,109,11,ES_PASSWORD | ES_AUTOHSCROLL | NOT WS_BORDER,WS_EX_CLIENTEDGE
+    LTEXT           "Selectionner un certificat",IDC_STC4,0,0,272,20
+    CONTROL         "",IDC_05LIST,"SysListView32",LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_TABSTOP,0,24,273,51,WS_EX_CLIENTEDGE
+    LTEXT           "Veuillez saisir votre mot de passe",IDC_STC5,0,84,272,20
+    CONTROL         "Exécuter un test de connection à la fin de cet assistant",IDC_05TEST,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,156,255,13
+END
+
+IDD_06TESTRESULTOK DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "Le test s'est déroulé avec succès. Vous pouvez désormais utiliser votre carte à puce pour ouvrir une session.",IDC_STC7,41,14,225,32
+    LTEXT           "Tâches supplémentaires :",IDC_STATIC,13,107,204,13
+    CONTROL         "<a id=""idUpdate"">Rapporter automatiquement que ce modèle de carte fonctionne correctement</a>",IDC_06UPDATEDATABASE,
+                    "SysLink",WS_TABSTOP,21,120,216,17
+    CONTROL         "<a id=""idRemove"">Activer ou désactiver la politique de retrait</a>",IDC_06REMOVALPOLICY,
+                    "SysLink",WS_TABSTOP,21,162,216,11
+    CONTROL         "<a id=""idForce"">Décider de l'obligation d'utiliser une carte à puce</a>",IDC_06FORCEPOLICY,
+                    "SysLink",WS_TABSTOP,21,145,216,11
+    ICON            "",IDC_06SHIELD,10,12,20,20
+END
+
+IDD_07TESTRESULTNOTOK DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "<a id=""idReport"">Soumettre un rapport à l'équipe de support</a>",IDC_07SENDREPORT,
+                    "SysLink",WS_TABSTOP,21,125,216,13
+    LTEXT           "Vous pouvez indiquer de manière optionnelle un email :",IDC_EMAILLBL,21,141,237,12
+    EDITTEXT        IDC_07EMAIL,76,154,118,13,ES_AUTOHSCROLL
+    LTEXT           "Email (optionnel) :",IDC_EMAILSEND,21,155,53,11
+    LTEXT           "Le test a échoué. Vous pouvez effectuer un nouveau test ou contacter notre support.",IDC_STC6,40,15,228,22
+    LTEXT           "Description de l'erreur",IDC_WIZARDERROR,40,50,225,33
+    LTEXT           "Détails :",IDC_STATIC,40,36,105,9
+    ICON            "",IDC_07SHIELD,12,12,23,23
+END
+
+IDD_DIALOGREMOVEPOLICY DIALOGEX 0, 0, 292, 235
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Smart card settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,178,214,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,235,214,50,14
+    LTEXT           "La politique de retrait s'applique lorsqu'un utilisateur a ouvert une session à l'aide d'une carte à puce et que la carte à puce est retirée du lecteur. Veuillez choisir l'action à exécuter lors du retrait :",IDC_STATIC,7,18,258,34
+    CONTROL         "Aucune action",IDC_NOACTION,"Button",BS_AUTORADIOBUTTON,26,56,197,18
+    CONTROL         "Verrouiller l'ordinateur",IDC_LOCK,"Button",BS_AUTORADIOBUTTON,26,75,202,20
+    CONTROL         "Fermer la session",IDC_LOGOFF,"Button",BS_AUTORADIOBUTTON,26,114,219,18
+    CONTROL         "Se déconnecter de la session terminal server",IDC_DISCONNECT,
+                    "Button",BS_AUTORADIOBUTTON,25,148,236,14
+    LTEXT           "Le retrait de la carte à puce déconnecte la session terminal server en cours, sans verrouiller la session. Cela permet à l'utilisateur de réinsérer sa carte ou de l'insérer dans un autre terminal pour poursuivre plus tard sa session.",IDC_STATIC,25,164,226,36
+    LTEXT           "La session de l'utilisateur courant est terminée.",IDC_STATIC,26,133,227,11
+    LTEXT           "La session est verrouillée lors du retrait",IDC_STATIC,26,97,238,13
+END
+
+IDD_DIALOGFORCEPOLICY DIALOGEX 0, 0, 295, 183
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Smart card settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,181,162,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,238,162,50,14
+    LTEXT           "Cette politique, liée à l'ordinateur, permet de rendre obligatoire le login par carte à puce.",IDC_STATIC,7,7,281,17
+    CONTROL         "Désactivée (recommandé)",IDC_FORCEDISABLE,"Button",BS_AUTORADIOBUTTON,31,65,185,13
+    CONTROL         "Activée (non recommandé)",IDC_FORCEENABLE,"Button",BS_AUTORADIOBUTTON,31,113,239,13
+    LTEXT           "Les utilisateurs peuvent ouvrir une session par n'importe quel moyen.",IDC_STATIC,31,81,222,8
+    LTEXT           "Seul les utilisateurs munis d'une carte pourront ouvrir une session.",IDC_STATIC,31,130,248,11
+    LTEXT           "Si elle est appliquée, vous ne pourrez plus ouvrir une session si vous perdez votre carte ou si elle expire.",IDC_STATIC,7,25,273,35
+END
+
+IDD_ASKFORPIN DIALOGEX 0, 0, 167, 68
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "PIN"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,56,47,50,14
+    PUSHBUTTON      "Annuler",IDCANCEL,110,47,50,14
+    EDITTEXT        IDC_PIN,7,25,153,13,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "Veuillez entrer votre code PIN :",IDC_STATIC,7,7,153,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_01MAIN, DIALOG
+    BEGIN
+    END
+
+    IDD_02ENABLE, DIALOG
+    BEGIN
+    END
+
+    IDD_03NEW, DIALOG
+    BEGIN
+    END
+
+    IDD_04CHECKS, DIALOG
+    BEGIN
+    END
+
+    IDD_05PASSWORD, DIALOG
+    BEGIN
+    END
+
+    IDD_06TESTRESULTOK, DIALOG
+    BEGIN
+    END
+
+    IDD_07TESTRESULTNOTOK, DIALOG
+    BEGIN
+    END
+
+    IDD_ASKFORPIN, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "EIDConfigurationWizardXP_fr.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""EIDConfigurationWizardXP.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_04SIGNATUREONLYOK   "La clé associée au certificat peut être utilisé"
+    IDS_04SIGNATUREONLYNOK  "Le certificat est associé à une clé ne pouvant être utilisée que pour signer des données"
+    IDS_04CHANGESIGNATUREPOLICY "Modifier la politique de Windows"
+    IDS_AREYOUSURE          "Etes-vous sûr ?"
+    IDS_EIDNOTAVAILABLE     "Authentication package non disponible"
+    IDS_TITLE0              "Gestion des information d'authentification"
+    IDS_TITLE1              "Configurer l'ouverture de session par carte à puce"
+    IDS_TITLE2              "Configurer une carte à puce"
+    IDS_TITLE3              "Vérifier le status d'une carte à puce"
+    IDS_TITLE4              "Entrer votre mot de passe"
+    IDS_CAPTION             "Configuration de l'ouverture de session par carte à puce"
+    IDS_03OBJECT            "Objet : %s"
+    IDS_03DELIVERED         "Deliveré : %s %s"
+    IDS_03EXPIRES           "Expire : %s %s"
+    IDS_03CONTAINERFILES    "Container Files"
+    IDS_03ALLFILES          "All Files"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_03CERTVIEWTITLE     "Info"
+    IDS_WRONGPIN_RETRIES    "Un mauvais PIN a été présenté à la carte : il reste %d essais"
+    IDS_05CREDINFOCAPTION   "Test"
+    IDS_05CREDINFOCONFIRMTITLE "Résultat"
+    IDS_05CREDINFOCONFIRMMESSAGE "Information d'authentification valide"
+    IDS_04TRUSTOK           "Le certificat est valide"
+    IDS_04TRUSTNOK          "Erreur"
+    IDS_04ENCRYPTIONOK      "La carte supporte d'encryption"
+    IDS_04ENCRYPTIONNOK     "La carte ne supporte pas l'encryption"
+    IDS_04TESTUSERNAME      "Nom d'utilisateur"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_04TESTTRUST         "Confiance"
+    IDS_04TESTCRYPTO        "Crypto"
+    IDS_CERT_TRUST_NO_ERROR "Aucune erreur trouvée pour le certificat"
+    IDS_CERT_TRUST_IS_NOT_TIME_VALID 
+                            "Un certificat requis n'est pas dans sa période de validité selon la vérification par rapport à l'horloge système en cours"
+    IDS_CERT_TRUST_IS_NOT_TIME_NESTED 
+                            "Les périodes de validité de la chaîne de certification ne se suivent pas correctement."
+    IDS_CERT_TRUST_IS_REVOKED "Le certificat ou la signature a été révoqué."
+    IDS_CERT_TRUST_IS_NOT_SIGNATURE_VALID 
+                            "The certificate or one of the certificates in the certificate chain does not have a valid signature."
+    IDS_04TRUSTENABLENOEKU  "Ne pas vérifier l'EKU"
+    IDS_04TESTSIGNATURE     "Crypto"
+    IDS_02EXISTINGNOTE      "Choississez cette option si vous disposez d'une carte à puce déjà configurée"
+    IDS_02NEWNOTE           "Choississez cette option si vous disposez d'une carte à puce vierge"
+    IDS_TITLE5              "Résultat du test"
+    IDS_CHECKDRIVERONLINE   "EIDAuthenticate a détecté que la carte à puce que vous utilisez (ATR:%s) ne possède pas de pilote. Voulez-vous rechercher dans notre base de données une solution ?"
+    IDS_TURNREMOVALPOLICY   "Activer ou désactiver la politique de retrait"
+    IDS_TURNFORCEPOLICY     "Rendre ou ne pas rendre obligatoire l'utilisation de cartes à puce"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_CERT_TRUST_IS_NOT_VALID_FOR_USAGE 
+                            "Le certificat n'est pas valide pour l'usage requis."
+    IDS_CERT_TRUST_IS_UNTRUSTED_ROOT 
+                            "Une chaîne de certificat traitée se termine par un certificat racine qui n'est pas approuvé par le fournisseur d'approbation."
+    IDS_CERT_TRUST_REVOCATION_STATUS_UNKNOWN 
+                            "The revocation status of the certificate or one of the certificates in the certificate chain is unknown."
+    IDS_CERT_TRUST_IS_CYCLIC 
+                            "One of the certificates in the chain was issued by a certification authority that the original certificate had certified."
+    IDS_CERT_TRUST_IS_PARTIAL_CHAIN "The certificate chain is not complete."
+    IDS_CERT_TRUST_CTL_IS_NOT_TIME_VALID 
+                            "A CTL used to create this chain was not time-valid."
+    IDS_CERT_TRUST_CTL_IS_NOT_SIGNATURE_VALID 
+                            "A CTL used to create this chain did not have a valid signature."
+    IDS_CERT_TRUST_CTL_IS_NOT_VALID_FOR_USAGE 
+                            "A CTL used to create this chain is not valid for this usage."
+    IDS_CERT_TRUST_UNKOWN_ERROR "Unknown error"
+    IDS_NO_CERTIFICATE      "Il n'y a pas de certificat"
+    IDS_04TRUSTMAKETRUSTED  "Faire confiance au certificat"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_NODOMAINACCOUNT     "EIDAuthenticate ne fonctionne pas sur des comptes appartenant à un domaine. EIDAuthenticate ne fonctionne que sur les postes non connectés à un domaine ou avec un compte local."
+	IDS_04TRUSTENABLETIMEINVALID "Ignorer la validation temporelle"
+END
+
+#endif    // Français resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

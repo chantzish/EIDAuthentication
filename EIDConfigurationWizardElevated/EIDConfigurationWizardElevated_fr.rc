@@ -1,0 +1,133 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "EIDConfigurationWizardElevated_fr.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "EIDConfigurationWizardElevated.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Français resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)
+LANGUAGE LANG_FRENCH, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOGREMOVEPOLICY DIALOGEX 0, 0, 292, 235
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Smart card settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,178,214,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,235,214,50,14
+    LTEXT           "La politique de retrait s'applique lorsqu'un utilisateur a ouvert une session à l'aide d'une carte à puce et que la carte à puce est retirée du lecteur. Veuillez choisir l'action à exécuter lors du retrait :",IDC_STATIC,7,18,258,34
+    CONTROL         "Aucune action",IDC_NOACTION,"Button",BS_AUTORADIOBUTTON,26,56,197,18
+    CONTROL         "Verrouiller l'ordinateur",IDC_LOCK,"Button",BS_AUTORADIOBUTTON,26,75,202,20
+    CONTROL         "Fermer la session",IDC_LOGOFF,"Button",BS_AUTORADIOBUTTON,26,114,219,18
+    CONTROL         "Se déconnecter de la session terminal server",IDC_DISCONNECT,
+                    "Button",BS_AUTORADIOBUTTON,25,148,236,14
+    LTEXT           "Le retrait de la carte à puce déconnecte la session terminal server en cours, sans verrouiller la session. Cela permet à l'utilisateur de réinsérer sa carte ou de l'insérer dans un autre terminal pour poursuivre plus tard sa session.",IDC_STATIC,25,164,226,36
+    LTEXT           "La session de l'utilisateur courant est terminée.",IDC_STATIC,26,133,227,11
+    LTEXT           "La session est verrouillée lors du retrait",IDC_STATIC,26,97,238,13
+END
+
+IDD_DIALOGFORCEPOLICY DIALOGEX 0, 0, 295, 183
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Smart card settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,181,162,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,238,162,50,14
+    LTEXT           "Cette politique, liée à l'ordinateur, permet de rendre obligatoire le login par carte à puce.",IDC_STATIC,7,7,281,17
+    CONTROL         "Désactivée (recommandé)",IDC_FORCEDISABLE,"Button",BS_AUTORADIOBUTTON,31,65,185,13
+    CONTROL         "Activée (non recommandé)",IDC_FORCEENABLE,"Button",BS_AUTORADIOBUTTON,31,113,239,13
+    LTEXT           "Les utilisateurs peuvent ouvrir une session par n'importe quel moyen.",IDC_STATIC,31,81,222,8
+    LTEXT           "Seul les utilisateurs munis d'une carte pourront ouvrir une session.",IDC_STATIC,31,130,248,11
+    LTEXT           "Si elle est appliquée, vous ne pourrez plus ouvrir une session si vous perdez votre carte ou si elle expire.",IDC_STATIC,7,25,273,35
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_DIALOGREMOVEPOLICY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 285
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 228
+    END
+
+    IDD_DIALOGFORCEPOLICY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 288
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "EIDConfigurationWizardElevated_fr.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""EIDConfigurationWizardElevated.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Français resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

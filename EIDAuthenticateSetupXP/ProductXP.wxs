@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?include $(sys.SOURCEFILEDIR).. \EIDAuthenticateSetup\include.wxi ?>
+  <Product Id="$(var.ProductCode)" Codepage="1252" Language="0"
+         Manufacturer="My Smart Logon"
+         Name="EIDAuthenticate"
+         Version="!(bind.FileVersion.EIDAuthenticationPackage)"
+         UpgradeCode="$(var.UpgradeCode)">
+    <Package Compressed="yes" InstallerVersion="200"
+				Languages="0"
+				Manufacturer="My Smart Logon"
+				InstallPrivileges="elevated"
+				InstallScope="perMachine" Platform="$(var.Platform)"
+				Description="$(var.ProductName)"/>
+    <Upgrade Id="$(var.UpgradeCode)">
+      <UpgradeVersion OnlyDetect="yes" Minimum="!(bind.FileVersion.EIDAuthenticationPackage)" Property="NEWERVERSIONDETECTED" IncludeMinimum="no" />
+      <UpgradeVersion OnlyDetect="no" Maximum="!(bind.FileVersion.EIDAuthenticationPackage)" Property="OLDERVERSIONBEINGUPGRADED" IncludeMaximum="no" />
+    </Upgrade>
+
+    <Condition Message="An administrator must approve or install [ProductName].">
+      Privileged
+    </Condition>
+
+    <!-- do not edit the rtf file with word! The installer will be unable to read the license -->
+    <WixVariable Id="WixUILicenseRtf" Value="..\EIDAuthenticateSetup\license.rtf" />
+    <WixVariable Id="WixUIBannerBmp" Value="..\EIDAuthenticateSetup\bannrbmp.bmp"/>
+    <WixVariable Id="WixUIDialogBmp" Value="..\EIDAuthenticateSetup\dlgbmp.bmp"/>
+    <Condition Message="This setup has been design for Windows XP or Windows 2003">
+      <![CDATA[VersionNT = 501 or VersionNT = 502]]>
+    </Condition>
+
+    <?if $(var.Platform) = x64 ?>
+    <Condition Message="This setup has been design for 64-bit versions of Windows.  Please run the setup on 64-bit Windows or get the 32 bits setup.">
+      VersionNT64
+    </Condition>
+    <?else?>
+    <Condition Message="This setup has been design for 32-bit versions of Windows.  Please run the setup on 32-bit Windows.">
+      Not VersionNT64
+    </Condition>
+    <?endif?>
+
+    <Property Id="ARPHELPLINK" Value="http://www.mysmartlogon.com" />
+    <Property Id="ARPCONTACT" Value="My Smart Logon" />
+    <Property Id="HASALREADYBEENINSTALLED">
+      <DirectorySearch Id="AuthenticationPackageDirectory" Path="[$(var.PlatformSystemFolder)]">
+        <FileSearch Id="FileSearchEIDAuthenticationPackage" Name="EIDAuthenticationPackage.dll"/>
+      </DirectorySearch>
+    </Property>
+
+    <Condition Message="Please uninstall previous version of EIDAuthenticate first">
+      <![CDATA[  (Installed) Or (Not HASALREADYBEENINSTALLED)]]>
+    </Condition>
+
+    <CustomAction Id="UninstallEIDAuthenticate" FileKey="EIDAuthenticationPackage" DllEntry="Uninstall" Execute="deferred" Impersonate="no" />
+    <CustomAction Id="CommitEIDAuthenticate" FileKey="EIDAuthenticationPackage" DllEntry="Commit" Execute="commit" Impersonate="no"/>
+    <!-- Prevent downgrading -->
+    <CustomAction Id="PreventDowngrading"
+					  Error="Newer version already installed." />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="$(var.PlatformSystemFolder)" SourceName="System Folder">
+        <Component Id="EIDAuthenticationPackage" Guid="d607063e-497c-41a5-a559-1d02be3f6d95">
+          <File Id="EIDAuthenticationPackage" Name="EIDAuthenticationPackage.dll" KeyPath="yes" DiskId="1" Source="$(var.SourceDir)\EIDAuthenticationPackage.dll" Checksum="yes"/>
+          <RegistryKey Root="HKLM" Key="SYSTEM\CurrentControlSet\Control\Lsa">
+            <RegistryValue Action="append" Type="multiString" Name="Security Packages" Value="EIDAuthenticationPackage"/>
+          </RegistryKey>
+        </Component>
+        
+        <Component Id="EIDGina" Guid="B2159A3C-4589-4123-B5D4-AB6CA6331E10">
+          <File Id="EIDGina" Name="EIDGina.dll" KeyPath="yes" DiskId="1" Source="$(var.SourceDir)\EIDGina.dll" Checksum="yes"/>
+          <RegistryKey Root="HKLM"
+                  Key="SOFTWARE\Microsoft\Windows NT\CurrentVersion\WinLogon">
+            <RegistryValue Type="string" Name="GinaDLL" Value="EIDGina"/>
+          </RegistryKey>
+        </Component>
+        
+        <Component Id="EIDConfigurationWizardXP" Guid="45D86582-9EB8-4F0C-8C40-89594A6CA1BC">
+          <File Id="EIDConfigurationWizardXP" Name="EIDConfigurationWizardXP.exe" KeyPath="yes" DiskId="1" Source="$(var.SourceDir)\EIDConfigurationWizardXP.exe" Checksum="yes"/>
+          <RegistryKey Root="HKLM"
+                  Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel\NameSpace\{F5D846B4-14B0-11DE-B23C-27A355D89593}">
+            <RegistryValue Type="string" Value="EIDConfigurationWizardXP"/>
+          </RegistryKey>
+          <RegistryKey Root="HKCR" Key="CLSID\{F5D846B4-14B0-11DE-B23C-27A355D89593}">
+            <RegistryValue Type="string" Value="EIDConfigurationWizardXP"/>
+            <RegistryValue Type="string" Name="LocalizedString" Value="Smart Card Logon"/>
+            <RegistryValue Type="string" Name="InfoTip" Value="Smart Card Logon"/>
+            <RegistryValue Type="expandable" Key="DefaultIcon" Value="%SystemRoot%\system32\shell32.dll,-13"/>
+            <RegistryValue Type="expandable"  Key="Shell\Open\Command" Value="%SystemRoot%\system32\EIDConfigurationWizardXP.exe"/>
+          </RegistryKey>
+        </Component>
+        
+        <Component Id="EIDPasswordChangeNotification" Guid="8a8368f9-c785-427f-906c-d17ba5dbdb52">
+          <File Id="EIDPasswordChangeNotification" Name="EIDPasswordChangeNotification.dll" KeyPath="yes" DiskId="1" Source="$(var.SourceDir)\EIDPasswordChangeNotification.dll" Checksum="yes"/>
+          <RegistryKey Root="HKLM" Key="SYSTEM\CurrentControlSet\Control\Lsa">
+            <RegistryValue Action="append" Type="multiString" Name="Notification Packages" Value="EIDPasswordChangeNotification"/>
+          </RegistryKey>
+        </Component>
+        
+        <Component Id="DisableCAD" Guid="1892F363-1896-42C8-B330-831F4B942C4C">
+          <RegistryKey Root="HKLM" Key="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon">
+            <RegistryValue Type="integer" Name="DisableCAD" Value="0" KeyPath="yes"/>
+          </RegistryKey>
+        </Component>
+        
+        <Component Id="EnableAES" Guid="1C7B9C29-6A47-4C98-9514-5017A517A2CF">
+          <Condition><![CDATA[VersionNT = 501]]></Condition>
+          <RegistryKey Root="HKLM" Key="SOFTWARE\Microsoft\Cryptography\Defaults\Provider\Microsoft Enhanced RSA and AES Cryptographic Provider">
+            <RegistryValue Type="integer" Name="Type" Value="24"/>
+            <RegistryValue Type="integer" Name="SigInFile" Value="0"/>
+            <RegistryValue Type="string" Name="Image Path" Value="rsaenh.dll" KeyPath="yes"/>
+          </RegistryKey>
+        </Component>
+
+        <?if $(var.Configuration) = "Debug"?>
+        <Component Id="EIDAuthenticationPackageDebug" Guid="aa8954fd-8930-496a-b152-3690b43ddad6">
+          <File Id="EIDAuthenticationPackageDebug" Name="EIDAuthenticationPackage.pdb" KeyPath="yes" DiskId="1" Source="$(var.SourceDir)\EIDAuthenticationPackage.pdb" Checksum="yes"/>
+        </Component>
+        <Component Id="EIDPasswordChangeNotificationDebug" Guid="4665d665-2c5a-4300-9661-4478b9e96f42">
+          <File Id="EIDPasswordChangeNotificationDebug" Name="EIDPasswordChangeNotification.pdb" KeyPath="yes" DiskId="1" Source="$(var.SourceDir)\EIDPasswordChangeNotification.pdb" Checksum="yes"/>
+        </Component>
+        <Component Id="EIDGinaDebug" Guid="0A1D996F-9B87-4173-BAF3-7BB3494F4D00">
+          <File Id="EIDGinaDebug" Name="EIDGina.pdb" KeyPath="yes" DiskId="1" Source="$(var.SourceDir)\EIDGina.pdb" Checksum="yes"/>
+        </Component>
+        <Component Id="EIDConfigurationWizardXPDebug" Guid="5A410A32-46C8-4D82-AD78-3F1CE8AE89FB">
+          <File Id="EIDConfigurationWizardXPDebug" Name="EIDConfigurationWizardXP.pdb" KeyPath="yes" DiskId="1" Source="$(var.SourceDir)\EIDConfigurationWizardXP.pdb" Checksum="yes"/>
+        </Component>
+        <?endif?>
+      </Directory>
+    </Directory>
+    <Feature Id="DefaultFeature" ConfigurableDirectory="TARGETDIR" Level="1">
+      <ComponentRef Id="EIDAuthenticationPackage" />
+      <ComponentRef Id="EIDPasswordChangeNotification" />
+      <ComponentRef Id="EIDConfigurationWizardXP" />
+      <ComponentRef Id="EIDGina" />
+      <ComponentRef Id="EnableAES" />
+      <ComponentRef Id="DisableCAD" />
+      <?if $(var.Configuration) = "Debug"?>
+        <ComponentRef Id="EIDAuthenticationPackageDebug" />
+        <ComponentRef Id="EIDPasswordChangeNotificationDebug" />
+        <ComponentRef Id="EIDGinaDebug" />
+        <ComponentRef Id="EIDConfigurationWizardXPDebug" />
+      <?endif?>
+    </Feature>
+    <Media Id="1" Cabinet="eidauthenticate.cab" EmbedCab="yes" />
+
+    <UIRef Id="WixUI_Minimal"/>
+    <UIRef Id="WixUI_ErrorProgressText" />
+    <InstallExecuteSequence>
+      <Custom Action="PreventDowngrading" After="FindRelatedProducts">NEWPRODUCTFOUND</Custom>
+      <RemoveExistingProducts After="InstallFinalize" />
+      <Custom Action='UninstallEIDAuthenticate' Before="RemoveFiles">REMOVE="ALL"</Custom>
+      <Custom Action='CommitEIDAuthenticate' Before='InstallFinalize'>Not REMOVE</Custom>
+      <ScheduleReboot After="InstallFinalize" />
+    </InstallExecuteSequence>
+
+  </Product>
+</Wix>

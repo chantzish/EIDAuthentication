@@ -1,0 +1,20 @@
+list process
+===================
+CTRL-PAUSE to break
+
+!process 0 0
+
+PROCESS 85999d90  SessionId: 0  Cid: 02a0    Peb: 7ffdf000  ParentCid: 022c
+    DirBase: 4ec800e0  ObjectTable: 972afd98  HandleCount: 512.
+    Image: lsass.exe
+
+switch to the process to debug
+=========
+.process /r /p  85999d90  
+.process /i  85999d90  then g to switch context 
+(else the breakpoint will be set in a random process)
+
+
+breakpoing
+===========
+bp EIDGina!WlxLoggedOutSAS

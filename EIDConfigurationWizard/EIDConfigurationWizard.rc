@@ -1,0 +1,308 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "EIDConfigurationWizard.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "../EIDCardLibrary/EIDAuthenticateVersion.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutre resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION EIDAuthenticateVersionNumeric
+ PRODUCTVERSION EIDAuthenticateVersionNumeric
+ FILEFLAGSMASK 0x0L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "CompanyName", "www.mysmartlogon.com"
+            VALUE "FileDescription", "Configuration Wizard"
+            VALUE "FileVersion", EIDAuthenticateVersionText
+            VALUE "InternalName", "EIDConfigurationWizard.exe"
+            VALUE "OriginalFilename", "EIDConfigurationWizard.exe"
+            VALUE "ProductName", "EID Configuration Wizard"
+            VALUE "ProductVersion", EIDAuthenticateVersionText
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// XML
+//
+
+IDR_TASKFILEURL         XML                     "taskfileurl.xml"
+#endif    // Neutre resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Anglais (États-Unis) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "EIDConfigurationWizard.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""../EIDCardLibrary/EIDAuthenticateVersion.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_01MAIN DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    CONTROL         "Change smart card credentials",IDC_01CHANGE,"Button",BS_COMMANDLINK | WS_TABSTOP,21,21,216,33
+    CONTROL         "Disable smart card logon",IDC_01DELETE,"Button",BS_COMMANDLINK | WS_TABSTOP,21,69,216,33
+END
+
+IDD_02ENABLE DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    CONTROL         "Use preconfigured card",IDC_02EXISTING,"Button",BS_COMMANDLINK | WS_TABSTOP,21,21,216,39
+    CONTROL         "Configure a new set of credentials",IDC_02NEW,"Button",BS_COMMANDLINK | WS_TABSTOP,21,69,216,33
+    CONTROL         "<a  id=""idDatabase"">Check online database for known incompatibilities</a>",IDC_SYSLINKHELP,
+                    "SysLink",WS_TABSTOP,25,185,223,8
+    CONTROL         "Disable smart card logon",IDC_01DELETE,"Button",BS_COMMANDLINK | WS_TABSTOP,21,116,216,33
+END
+
+IDD_03NEW DIALOGEX 65535, 65523, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    LTEXT           "This wizard will create a certificate on the smart card based on a certification authority. Please select a certification authority",1007,3,18,272,20
+    CONTROL         "&Use this certification authority",IDC_03USETHIS,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,6,57,163,10
+    CONTROL         "&Create a new certification authority",IDC_03_CREATE,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,6,39,185,10
+    CONTROL         "&Import a p12 file into the smart card",IDC_03IMPORT,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,3,138,185,10
+    LTEXT           "&Selected authority :",1009,12,78,250,10
+    LISTBOX         IDC_03CERTIFICATEPANEL,9,90,175,45,NOT LBS_NOTIFY | LBS_NOSEL | WS_TABSTOP
+    PUSHBUTTON      "&Show the certificate",IDC_03SHOW,192,87,81,12
+    PUSHBUTTON      "&Select an authority",IDC_03SELECT,192,105,81,12
+    EDITTEXT        IDC_03IMPORTPASSWORD,96,171,162,11,ES_PASSWORD | ES_AUTOHSCROLL | NOT WS_BORDER,WS_EX_CLIENTEDGE
+    LTEXT           "Password :",IDC_STC2,6,171,60,10
+    LTEXT           "File :",IDC_STC3,6,153,60,10
+    EDITTEXT        IDC_03FILENAME,96,153,162,11,ES_AUTOHSCROLL | NOT WS_BORDER,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "...",IDC_03SELECTFILE,258,153,12,12
+    CONTROL         "Delete all certificates on the smart card before processing",IDC_03DELETE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,192,261,9
+END
+
+IDD_04CHECKS DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_04LIST,"SysListView32",LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_TABSTOP,0,24,273,51,WS_EX_CLIENTEDGE
+    CONTROL         "",IDC_04CHECKS,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_AUTOARRANGE | LVS_NOCOLUMNHEADER | WS_TABSTOP,0,108,273,99,WS_EX_CLIENTEDGE
+    LTEXT           "Select a certificate",IDC_STC1,0,0,272,20
+    CONTROL         "<a id=""idrefresh"">Refresh</a>",IDC_04REFRESH,"SysLink",WS_TABSTOP,246,78,24,9
+END
+
+IDD_05PASSWORD DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    LTEXT           "Password :",-1,9,112,60,10
+    EDITTEXT        IDC_05PASSWORD,99,112,109,11,ES_PASSWORD | ES_AUTOHSCROLL | NOT WS_BORDER,WS_EX_CLIENTEDGE
+    CONTROL         "Launch a test after the completion of this wizard",IDC_05TEST,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,156,255,13
+    LTEXT           "Select a certificate",IDC_STC4,0,0,272,20
+    CONTROL         "",IDC_05LIST,"SysListView32",LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_TABSTOP,0,24,273,51,WS_EX_CLIENTEDGE
+    LTEXT           "Please type the password of your account (not the PIN of the smart card) to check your identity. Leave this field blank if your account doesn't have a password",IDC_STC5,0,84,272,20
+END
+
+IDD_06TESTRESULTOK DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    LTEXT           "The test was successfull. You can now use your smartcard to logon.",IDC_STC7,40,16,228,22
+    LTEXT           "Additional tasks :",IDC_STATIC,13,107,204,13
+    CONTROL         "Update automatically the status of this card as ""Working"" on the internet site",IDC_06UPDATEDATABASE,
+                    "Button",BS_COMMANDLINK | WS_TABSTOP,21,116,216,33
+    ICON            "",IDC_06SHIELD,10,10,20,20
+END
+
+IDD_07TESTRESULTNOTOK DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 9, "Segoe UI", 0, 0, 0x0
+BEGIN
+    CONTROL         "Send a report to the support team",IDC_07SENDREPORT,
+                    "Button",BS_COMMANDLINK | WS_TABSTOP,21,112,216,23
+    LTEXT           "You can specify an email to get updates about this problem from our support team :",IDC_EMAILLBL,21,141,237,17
+    EDITTEXT        IDC_07EMAIL,76,161,118,13,ES_AUTOHSCROLL
+    LTEXT           "Email (optional) :",IDC_EMAILSEND,21,162,53,11
+    LTEXT           "The test was unsuccessfull. You can run the test again or send a report to the support team.",IDC_STC6,39,6,211,22
+    LTEXT           "Error description",IDC_WIZARDERROR,39,41,225,33
+    LTEXT           "Detail :",IDC_STATIC,39,27,105,9
+    ICON            "",IDC_07SHIELD,10,10,20,20
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_01MAIN, DIALOG
+    BEGIN
+    END
+
+    IDD_06TESTRESULTOK, DIALOG
+    BEGIN
+    END
+
+    IDD_07TESTRESULTNOTOK, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_04SIGNATUREONLYOK   "The key associated to the certificate can be used"
+    IDS_04SIGNATUREONLYNOK  "The certificate is associated with a ""signature only"" key"
+    IDS_04CHANGESIGNATUREPOLICY "Change the windows policy"
+    IDS_AREYOUSURE          "Are you sure ?"
+    IDS_EIDNOTAVAILABLE     "Authentication package not available"
+    IDS_TITLE0              "Credential managment"
+    IDS_TITLE1              "Configure smart card logon"
+    IDS_TITLE2              "Configure a smart card"
+    IDS_TITLE3              "Check the status of the smart card"
+    IDS_TITLE4              "Enter your password"
+    IDS_CAPTION             "Smart Card Logon Configuration"
+    IDS_03OBJECT            "Object : %s"
+    IDS_03DELIVERED         "Delivered : %s %s"
+    IDS_03EXPIRES           "Expires : %s %s"
+    IDS_03CONTAINERFILES    "Container Files"
+    IDS_03ALLFILES          "All Files"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_03CERTVIEWTITLE     "Info"
+    IDS_WRONGPIN_RETRIES    "A wrong PIN was presented to the card : %d retries left"
+    IDS_05CREDINFOCAPTION   "Test"
+    IDS_05CREDINFOCONFIRMTITLE "result"
+    IDS_05CREDINFOCONFIRMMESSAGE "Credential Valid"
+    IDS_04TRUSTOK           "The certificate is valid"
+    IDS_04TRUSTNOK          "error"
+    IDS_04ENCRYPTIONOK      "The card supports encryption"
+    IDS_04ENCRYPTIONNOK     "The card doesn't support encryption"
+    IDS_04TESTUSERNAME      "Username"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_NODOMAINACCOUNT     "EIDAuthenticate doesn't work on domain account. EIDAuthenticate works only on stand alone computer or with local account."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_04TESTTRUST         "Trust"
+    IDS_04TESTCRYPTO        "Encryption"
+    IDS_04TRUSTENABLENOEKU  "Don't check EKU"
+    IDS_04TESTSIGNATURE     "Crypto"
+    IDS_02EXISTINGNOTE      "Choose this option if you want to use a smart card already configured"
+    IDS_02NEWNOTE           "Choose this option if you are using a blank smart card"
+    IDS_TITLE5              "Test result"
+    IDS_CHECKDRIVERONLINE   "EIDAuthenticate detected that the smart card you provided (ATR: %s) don't have a driver. Would you like to check our online database for solutions ?"
+    IDS_TURNREMOVALPOLICY   "Turn the removal policy on or off"
+    IDS_TURNFORCEPOLICY     "Turn the force smart card policy on or off"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_NO_CERTIFICATE      "There is no certificate"
+    IDS_04TRUSTENABLETIMEINVALID "Allow time invalid certificates"
+    IDS_04TRUSTMAKETRUSTED  "Make this certificate trusted"
+END
+
+#endif    // Anglais (États-Unis) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

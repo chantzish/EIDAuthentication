@@ -1,0 +1,10 @@
+because of a nasty UAC bug.
+
+On a task list url, if the application is non elevated and you choose 
+to launch an elevated process, this process goes to the back.
+Whatever ShowWindow MoveWindow you call, the window stay behind,
+hidden by the control panel.
+
+Only an application elevated because of its manifest can has a position "on top".
+So the only difference between the application, is the manifest :
+"requires administrator".

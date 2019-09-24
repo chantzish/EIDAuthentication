@@ -1,0 +1,395 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "EIDConfigurationWizardXP_ru.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "EIDConfigurationWizardXP.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russe resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+LANGUAGE LANG_RUSSIAN, SUBLANG_NEUTRAL
+#pragma code_page(1251)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_01MAIN, DIALOG
+    BEGIN
+    END
+
+    IDD_02ENABLE, DIALOG
+    BEGIN
+    END
+
+    IDD_03NEW, DIALOG
+    BEGIN
+    END
+
+    IDD_04CHECKS, DIALOG
+    BEGIN
+    END
+
+    IDD_05PASSWORD, DIALOG
+    BEGIN
+    END
+
+    IDD_06TESTRESULTOK, DIALOG
+    BEGIN
+    END
+
+    IDD_07TESTRESULTNOTOK, DIALOG
+    BEGIN
+    END
+
+    IDD_DIALOGREMOVEPOLICY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 285
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 228
+    END
+
+    IDD_DIALOGFORCEPOLICY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 288
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+
+    IDD_ASKFORPIN, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_01MAIN DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "Изменение учетных данных смарт-карты",IDC_01CHANGE,
+                    "Button",BS_AUTORADIOBUTTON,17,25,240,13
+    CONTROL         "Отключить авторизацию по смарт-карте",IDC_01DELETE,
+                    "Button",BS_AUTORADIOBUTTON,18,95,240,13
+    GROUPBOX        "",IDC_STATIC,8,13,256,49
+    GROUPBOX        "",IDC_STATIC,8,83,256,49
+END
+
+IDD_02ENABLE DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "",IDC_STATIC,8,13,256,49
+    CONTROL         "Использовать настроенную смарт-карту",IDC_02EXISTING,
+                    "Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,17,25,240,13
+    CONTROL         "Настройка нового набора учетных данных",IDC_02NEW,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,17,78,240,13
+    CONTROL         "Отключить авторизацию по смарт-карте",IDC_01DELETE,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,17,130,240,13
+    LTEXT           "Выберите эту опцию, если вы хотите использовать уже настроенную смарт-карту",IDC_STATIC,27,41,234,17
+    GROUPBOX        "",IDC_STATIC,8,66,256,49
+    LTEXT           "Выберите эту опцию, если вы хотите использовать новую смарт-карту",IDC_STATIC,25,94,235,11
+    GROUPBOX        "",IDC_STATIC,8,119,256,49
+    CONTROL         "<a  id=""idDatabase"">Check online database for known incompatibilities</a>",IDC_SYSLINKHELP,
+                    "SysLink",WS_TABSTOP,25,193,223,8
+    CONTROL         "<a  id=""idChangePin"">Change the PIN</a>",IDC_02CHANGEPIN,
+                    "SysLink",NOT WS_VISIBLE | WS_TABSTOP,26,177,223,8
+END
+
+IDD_03NEW DIALOGEX 65535, 65523, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "Это мастер создания сертификата смарт-карты на основе центра сертификации. Пожалуйста, выберите центр сертфикации:",1007,3,18,272,20
+    CONTROL         "&Использовать указанный центр сертификации",IDC_03USETHIS,
+                    "Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,6,57,163,10
+    CONTROL         "&Создать новый центр сертификации",IDC_03_CREATE,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,6,39,185,10
+    CONTROL         "&Импортировать файл p12 на смарт-карту",IDC_03IMPORT,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,3,138,185,10
+    LTEXT           "&Центр сертификации:",1009,12,78,250,10
+    LISTBOX         IDC_03CERTIFICATEPANEL,9,90,175,45,NOT LBS_NOTIFY | LBS_NOSEL | WS_TABSTOP
+    PUSHBUTTON      "&Показать сертификат",IDC_03SHOW,192,87,81,12
+    PUSHBUTTON      "&Выбрать Центр",IDC_03SELECT,192,105,81,12
+    EDITTEXT        IDC_03IMPORTPASSWORD,96,171,162,11,ES_PASSWORD | ES_AUTOHSCROLL | NOT WS_BORDER,WS_EX_CLIENTEDGE
+    LTEXT           "Пароль:",IDC_STC2,6,171,60,10
+    LTEXT           "Файл:",IDC_STC3,6,153,60,10
+    EDITTEXT        IDC_03FILENAME,96,153,162,11,ES_AUTOHSCROLL | NOT WS_BORDER,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "...",IDC_03SELECTFILE,258,153,12,12
+    CONTROL         "Удалить все сертификаты со смарт-карты до начала работы",IDC_03DELETE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,192,261,9
+END
+
+IDD_04CHECKS DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_04LIST,"SysListView32",LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_TABSTOP,0,24,273,51,WS_EX_CLIENTEDGE
+    LTEXT           "Выбор сертификата",IDC_STC1,0,0,272,20
+    CONTROL         "<a id=""idrefresh"">Обновить</a>",IDC_04REFRESH,"SysLink",WS_TABSTOP,246,78,24,9
+    GROUPBOX        "Checks",IDC_STATIC,2,94,270,110
+    ICON            "",IDC_04C1_ICON,11,107,18,17
+    ICON            "",IDC_04C2_ICON,11,139,18,17
+    ICON            "",IDC_04C3_ICON,11,171,18,17
+    LTEXT           "Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static ",IDC_04C1_RATIONAL,28,107,242,19
+    CONTROL         "<a>SysLink1</a>",IDC_04C1_LINK,"SysLink",WS_TABSTOP,29,125,241,8
+    LTEXT           "Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static ",IDC_04C2_RATIONAL,28,138,242,18
+    CONTROL         "<a>SysLink1</a>",IDC_04C2_LINK,"SysLink",WS_TABSTOP,29,158,241,8
+    LTEXT           "Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static Static ",IDC_04C3_RATIONAL,29,170,241,16
+    CONTROL         "<a>SysLink1</a>",IDC_04C3_LINK,"SysLink",WS_TABSTOP,30,191,240,8
+END
+
+IDD_05PASSWORD DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "Пароль :",-1,9,112,60,10
+    EDITTEXT        IDC_05PASSWORD,99,112,109,11,ES_PASSWORD | ES_AUTOHSCROLL | NOT WS_BORDER,WS_EX_CLIENTEDGE
+    LTEXT           "Выбор сертификата",IDC_STC4,0,0,272,20
+    CONTROL         "",IDC_05LIST,"SysListView32",LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_TABSTOP,0,24,273,51,WS_EX_CLIENTEDGE
+    LTEXT           "Ввод пароля",IDC_STC5,0,84,272,20
+    CONTROL         "Запуск теста после завершения работы мастера",IDC_05TEST,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,156,255,13
+END
+
+IDD_06TESTRESULTOK DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "Тестовый запуск прошел успешно. Теперь Вы можете использовать Вашу смарт-карту для входа в систему.",IDC_STC7,41,14,226,24
+    LTEXT           "Additional tasks :",IDC_STATIC,13,107,204,13
+    CONTROL         "<a id=""idRemove"">Включить/выключить политику извлечения смарт-карты</a>",IDC_06REMOVALPOLICY,
+                    "SysLink",WS_TABSTOP,21,159,216,11
+    CONTROL         "<a id=""idForce"">Включить/выключит групповые политики смарт-карт</a>",IDC_06FORCEPOLICY,
+                    "SysLink",WS_TABSTOP,21,142,216,11
+    ICON            "",IDC_06SHIELD,8,12,20,20
+    CONTROL         "<a id=""idUpdate"">Update automatically the status of this card as ""Working"" on the internet site</a>",IDC_06UPDATEDATABASE,
+                    "SysLink",WS_TABSTOP,21,120,216,19
+END
+
+IDD_07TESTRESULTNOTOK DIALOGEX 0, 0, 273, 209
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "<a id=""idReport"">Отправить отчет в службу поддержки</a>",IDC_07SENDREPORT,
+                    "SysLink",WS_TABSTOP,21,125,216,13
+    LTEXT           "Укажите адрес для получения обновлений от службы поддержки:",IDC_EMAILLBL,21,141,237,12
+    EDITTEXT        IDC_07EMAIL,76,154,118,13,ES_AUTOHSCROLL
+    LTEXT           "Email(необяз.):",IDC_EMAILSEND,21,155,53,11
+    LTEXT           "Тест не был пройден. Вы можете запустить тест еще раз или отправить отчет в службу поддержки.",IDC_STC6,37,13,228,22
+    LTEXT           "Описание ошибки:",IDC_WIZARDERROR,37,48,227,33
+    LTEXT           "Детали:",IDC_STATIC,37,34,105,9
+    ICON            "",IDC_07SHIELD,12,12,21,20
+END
+
+IDD_DIALOGREMOVEPOLICY DIALOGEX 0, 0, 292, 235
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Настройки для смарт-карты"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "ОК",IDOK,178,214,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,235,214,50,14
+    LTEXT           "Политика извлечения смарт-карты применяется, когда пользователь вошел в систему с помощью смарт-карты, а затем извлекает смарт-карту со считывателя. Пожалуйста, выберите действие, которое выполняется при извлечении смарт-карты",IDC_STATIC,7,18,258,34
+    CONTROL         "Нет действия",IDC_NOACTION,"Button",BS_AUTORADIOBUTTON,26,56,197,18
+    CONTROL         "Заблокировать рабочую станцию",IDC_LOCK,"Button",BS_AUTORADIOBUTTON,26,75,202,20
+    CONTROL         "Принудительнй выход из системы",IDC_LOGOFF,"Button",BS_AUTORADIOBUTTON,26,114,219,18
+    CONTROL         "Отключение от сеанса удаленного рабочего стола",IDC_DISCONNECT,
+                    "Button",BS_AUTORADIOBUTTON,25,148,236,14
+    LTEXT           "При извлечении смарт-карты сеанс завершается без выхода пользователя из системы.  Это позволяет пользователю вставить смарт-карту и возобновить сеанс позднее, без необходимости снова входить в систему. ",IDC_STATIC,25,164,226,36
+    LTEXT           "При извлечении выполняется автоматический выход из системы. ",IDC_STATIC,26,133,227,11
+    LTEXT           "При извлечении смарт-карты рабочая станция блокируется. ",IDC_STATIC,26,97,238,13
+END
+
+IDD_DIALOGFORCEPOLICY DIALOGEX 0, 0, 295, 183
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Настройки для смарт-карты"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "ОК",IDOK,181,162,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,238,162,50,14
+    LTEXT           "Всегда требовать смарт-карту при входе в систему",IDC_STATIC,7,7,281,17
+    CONTROL         "Отключен (рекомендуется)",IDC_FORCEDISABLE,"Button",BS_AUTORADIOBUTTON,31,65,185,13
+    CONTROL         "Включен (не рекомендуется)",IDC_FORCEENABLE,"Button",BS_AUTORADIOBUTTON,31,113,239,13
+    LTEXT           "Вход в систему разрешен любым способом. ",IDC_STATIC,31,81,166,8
+    LTEXT           "Вход в систему только с использованием смарт-карты. ",IDC_STATIC,31,130,197,11
+    LTEXT           "Включение этого параметра не рекомендовано. Вы не сможете войти в систему, если Вы потеряли Вашу смарт-карту или срок действия сертификата истек.",IDC_STATIC,7,25,273,35
+END
+
+IDD_ASKFORPIN DIALOGEX 0, 0, 167, 68
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "PIN"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,56,47,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,110,47,50,14
+    EDITTEXT        IDC_PIN,7,28,153,13,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "Пожалуйста, введите ваш ПИН-код смарт-карта:",IDC_STATIC,7,7,153,17
+END
+
+#endif    // Russe resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russe (Russe) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "EIDConfigurationWizardXP_ru.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""EIDConfigurationWizardXP.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_04SIGNATUREONLYOK   "Ключ связанный с сертификатом может быть использован"
+    IDS_04SIGNATUREONLYNOK  "Ключ сертификата может быть использован только для подписи"
+    IDS_04CHANGESIGNATUREPOLICY "Изменить политику Windows"
+    IDS_AREYOUSURE          "Вы уверенны? "
+    IDS_EIDNOTAVAILABLE     "Проверки подлинности не доступна"
+    IDS_TITLE0              "Управление учетными данными"
+    IDS_TITLE1              "Настройка смарт-карты для входа в систему"
+    IDS_TITLE2              "Настройка смарт-карты"
+    IDS_TITLE3              "Проверить статус смарт-карты"
+    IDS_TITLE4              "Введите свой пароль"
+    IDS_CAPTION             "Конфигурация смарт-карты для входа в систему"
+    IDS_03OBJECT            "Объект : %s"
+    IDS_03DELIVERED         "Поставщик : %s %s"
+    IDS_03EXPIRES           "Истекает : %s %s"
+    IDS_03CONTAINERFILES    "Файлы контейнеров"
+    IDS_03ALLFILES          "Все файлы"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_03CERTVIEWTITLE     "Информация"
+    IDS_WRONGPIN_RETRIES    "Введен неверный ПИН-код : %d Осталось попыток"
+    IDS_05CREDINFOCAPTION   "Тест"
+    IDS_05CREDINFOCONFIRMTITLE "результат"
+    IDS_05CREDINFOCONFIRMMESSAGE "Учетные данные верны"
+    IDS_04TRUSTOK           "Сертификат верный"
+    IDS_04TRUSTNOK          "ошибка"
+    IDS_04ENCRYPTIONOK      "Карта поддерживает шифрование"
+    IDS_04ENCRYPTIONNOK     "Карта не поддерживает шифрование"
+    IDS_04TESTUSERNAME      "Пользователь"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_NODOMAINACCOUNT     "Внимание! EIDAuthenticate не поддерживает работу в домене. Используйте EIDAuthenticate только для локальных компьютеров и пользователей."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_04TESTTRUST         "Доверие"
+    IDS_04TESTCRYPTO        "Шифрование"
+    IDS_CERT_TRUST_NO_ERROR "При проверке цепочки сертификатов ошибки не обнаружены"
+    IDS_CERT_TRUST_IS_NOT_TIME_VALID 
+                            "Срок действия одного из сертификатов цепочки истек"
+    IDS_CERT_TRUST_IS_NOT_TIME_NESTED 
+                            "Сертификаты в цепочке являются неправильно временно-вложенными"
+    IDS_CERT_TRUST_IS_REVOKED 
+                            "Подлинность одного из сертификатов цепочки не может быть проверена "
+    IDS_CERT_TRUST_IS_NOT_SIGNATURE_VALID 
+                            "Один из сертификатов цепочки имеет неправильную подпись"
+    IDS_04TRUSTENABLENOEKU  "Не проверять расширенные параметры ключа"
+    IDS_04TESTSIGNATURE     "Ключи"
+    IDS_02EXISTINGNOTE      "Выберите эту опцию, если вы хотите использовать уже настроенную смарт-карту"
+    IDS_02NEWNOTE           "Выберите эту опцию, если вы хотите использовать новую смарт-карту"
+    IDS_TITLE5              "Результат теста"
+    IDS_CHECKDRIVERONLINE   "EIDAuthenticate обнаружил, что предоставленные Вами смарт-карты (ATR: %s ) не имеют драйверов. Вы хотели бы проверить нашу онлайновую базу данных для решения?"
+    IDS_TURNREMOVALPOLICY   "Включить/выключить политику извлечения смарт-карты"
+    IDS_TURNFORCEPOLICY     "Включить/выключит групповые политики смарт-карт"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_CERT_TRUST_IS_NOT_VALID_FOR_USAGE 
+                            "Даный сертификат или один из сертификатов цепочки не может быть использован"
+    IDS_CERT_TRUST_IS_UNTRUSTED_ROOT 
+                            "Нет доверия к корневому сертификату одного из сертификатов цепочки"
+    IDS_CERT_TRUST_REVOCATION_STATUS_UNKNOWN 
+                            "Состояние отзыва сертификата или одного из сертификатов в цепочке сертификатов, неизвестно"
+    IDS_CERT_TRUST_IS_CYCLIC 
+                            "Один из сертификатов в цепочке был выдан доверенным сертификационным органом"
+    IDS_CERT_TRUST_IS_PARTIAL_CHAIN "Цепочка сертификатов не является полной"
+    IDS_CERT_TRUST_CTL_IS_NOT_TIME_VALID 
+                            "СДС используемый для создания этой цепочки сертификатов не действительный."
+    IDS_CERT_TRUST_CTL_IS_NOT_SIGNATURE_VALID 
+                            "СДС используемый для создания этой цепочки сертификатов имеет неверную подпись"
+    IDS_CERT_TRUST_CTL_IS_NOT_VALID_FOR_USAGE 
+                            "СДС используемый для создания этой цепочки не действителен."
+    IDS_CERT_TRUST_UNKOWN_ERROR "Неизвестный тип ошибки"
+    IDS_NO_CERTIFICATE      "Сертификаты не существуют"
+    IDS_04TRUSTMAKETRUSTED  "Сделать этот сертификат доверенным"
+	IDS_04TRUSTENABLETIMEINVALID "Allow time invalid certificates"
+END
+
+#endif    // Russe (Russe) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

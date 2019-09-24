@@ -1,0 +1,143 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "EIDConfigurationWizardElevated_ru.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "EIDConfigurationWizardElevated.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russe resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+LANGUAGE LANG_RUSSIAN, SUBLANG_NEUTRAL
+#pragma code_page(1251)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_DIALOGREMOVEPOLICY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 285
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 228
+    END
+
+    IDD_DIALOGFORCEPOLICY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 288
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOGREMOVEPOLICY DIALOGEX 0, 0, 292, 235
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Настройки для смарт-карты"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "ОК",IDOK,178,214,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,235,214,50,14
+    LTEXT           "Политика извлечения смарт-карты применяется, когда пользователь вошел в систему с помощью смарт-карты, а затем извлекает смарт-карту со считывателя. Пожалуйста, выберите действие, которое выполняется при извлечении смарт-карты",IDC_STATIC,7,18,258,34
+    CONTROL         "Нет действия",IDC_NOACTION,"Button",BS_AUTORADIOBUTTON,26,56,197,18
+    CONTROL         "Заблокировать рабочую станцию",IDC_LOCK,"Button",BS_AUTORADIOBUTTON,26,75,202,20
+    CONTROL         "Принудительнй выход из системы",IDC_LOGOFF,"Button",BS_AUTORADIOBUTTON,26,114,219,18
+    CONTROL         "Отключение от сеанса удаленного рабочего стола",IDC_DISCONNECT,
+                    "Button",BS_AUTORADIOBUTTON,25,148,236,14
+    LTEXT           "При извлечении смарт-карты сеанс завершается без выхода пользователя из системы.  Это позволяет пользователю вставить смарт-карту и возобновить сеанс позднее, без необходимости снова входить в систему. ",IDC_STATIC,25,164,226,36
+    LTEXT           "При извлечении выполняется автоматический выход из системы. ",IDC_STATIC,26,133,227,11
+    LTEXT           "При извлечении смарт-карты рабочая станция блокируется. ",IDC_STATIC,26,97,238,13
+END
+
+IDD_DIALOGFORCEPOLICY DIALOGEX 0, 0, 295, 183
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Настройки для смарт-карты"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "ОК",IDOK,181,162,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,238,162,50,14
+    LTEXT           "Всегда требовать смарт-карту при входе в систему",IDC_STATIC,7,7,281,17
+    CONTROL         "Отключен (рекомендуется)",IDC_FORCEDISABLE,"Button",BS_AUTORADIOBUTTON,31,65,185,13
+    CONTROL         "Включен (не рекомендуется)",IDC_FORCEENABLE,"Button",BS_AUTORADIOBUTTON,31,113,239,13
+    LTEXT           "Вход в систему разрешен любым способом. ",IDC_STATIC,31,81,166,8
+    LTEXT           "Вход в систему только с использованием смарт-карты. ",IDC_STATIC,31,130,197,11
+    LTEXT           "Включение этого параметра не рекомендовано. Вы не сможете войти в систему, если Вы потеряли Вашу смарт-карту или срок действия сертификата истек.",IDC_STATIC,7,25,273,35
+END
+
+#endif    // Russe resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russe (Russe) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "EIDConfigurationWizardElevated_ru.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""EIDConfigurationWizardElevated.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russe (Russe) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

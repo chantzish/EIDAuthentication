@@ -1,0 +1,18 @@
+LIBRARY
+
+EXPORTS
+DllRegister
+DllUnRegister
+DllEnableLogging
+DllDisableLogging
+LsaApCallPackage
+LsaApCallPackagePassthrough
+LsaApCallPackageUntrusted
+LsaApInitializePackage
+LsaApLogonTerminated
+LsaApLogonUserEx2
+SpLsaModeInitialize
+SpUserModeInitialize
+; MSI functions
+Commit
+Uninstall
